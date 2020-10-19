@@ -1,15 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+$accentColorLight3: #d4fff6;
 $accentColorLight2: #73ffe2;
 $accentColorLight1: #3bebc7;
 $accentColor: #1AB394;
 $accentColorDark1: #127561;
 $accentColorDark2: #0a4035;
 
+$logo-width-3: 160px;
+$logo-width-2: 120px;
+
+.btn-navbarlink {
+    color: #444444;
+    background-color: white;
+    border: none;
+
+    &:hover{
+        color: $accentColor;
+        background-color: white;
+        border: none;
+    }
+}
+
+.btn-navbarlinkselected{
+    color: $accentColor;
+    border: none;
+
+    &:hover{
+        color: $accentColor;
+        background-color: white;
+        border: none;
+    }
+}
+
+//=============================================================================
 
 body{
+    font-family: "Poppins", Helvetica, sans-serif;
     overflow-X: hidden;
+}
+
+::selection{
+    background-color: $accentColor;
+    color: white;
 }
 
 .type-wrap{
@@ -22,6 +56,238 @@ body{
     @media screen and (max-width: 768px){
         font-size: 1.1rem;
     }
+}
+
+.colorAccent{
+    color: $accentColor;
+}
+
+.title{
+    font-family: 'Arial', sans-serif;
+    font-weight: bolder;
+
+    background-image: url("./Images/fleets-logo.svg");
+    background-size: cover;
+}
+
+.title-md{
+    @extend .title;
+
+    width: $logo-width-3;
+    height: ($logo-width-3 * 0.45);
+}
+
+.title-sm{
+    @extend .title;
+
+    width: $logo-width-2;
+    height: ($logo-width-2 * 0.45);
+}
+
+
+.headerNavbarLink{
+    
+    &:hover{
+        color: $accentColor;
+        background-color: white;
+        border: none;
+    }
+
+}
+
+.dropdown-menu{
+    box-shadow: 0px 0px 24px -6px rgba(82,91,102,0.66);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 100;
+    transform: translateY(0);
+}
+
+.show{
+    opacity: 1;
+    z-index: 100;
+}
+
+.fontPoppins{
+    font-family: "Poppins", Helvetica, sans-serif;
+}
+
+.fontPoppinsSmall{
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-size: 0.8rem;
+}
+
+.fontPoppinsGray{
+    font-family: "Poppins", Helvetica, sans-serif;
+    color: #555555;
+}
+
+.headerDropdownItem{
+    transition: 0.3s;
+    opacity: 0;
+
+    &:hover{
+        opacity:1;
+    }
+
+}
+
+.buttonAccent{
+    background-color: $accentColor;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.4s;
+
+    &:hover{
+        color: white;
+        background-color: $accentColorDark1;
+        transform: translateY(-10px);
+        box-shadow: 0px 5px 15px 0px rgba(219,219,219,1);
+    }
+}
+
+.buttonAccentLight{
+    @extend .buttonAccent;
+
+    background-color: $accentColorLight1;
+    color: $accentColorDark2;
+}
+
+.buttonAccentLightSmall{
+    @extend .buttonAccentLight;
+
+    font-size: 0.8rem;
+}
+
+.buttonAccentLightCircle{
+    @extend .buttonAccentLight;
+
+    border-radius: 25px;
+}
+
+.buttonGray{
+    background-color: #777777;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.4s;
+
+    &:hover{
+        color: white;
+        background-color: #444444;
+        transform: translateY(-10px);
+        box-shadow: 0px 5px 15px 0px rgba(219,219,219,1);
+    }
+}
+
+.h3Accent{
+    font-family: "Poppins", Helvetica, sans-serif;
+    color: $accentColor;
+}
+
+.h3Black{
+    font-family: "Poppins", Helvetica, sans-serif;
+    color: black;
+}
+
+.cardParagraph{
+    font-family: "Poppins", Helvetica, sans-serif;
+}
+
+.parallaxContTextbox{
+    top: -270px;
+    
+}
+
+.parallaxContHeader{
+    // fontFamily: '"Poppins", Helvetica, sans-serif',
+    color: white;
+}
+
+.parallaxContHeader2{
+    font-family: "Poppins", Helvetica, sans-serif;
+    color: white;
+}
+
+.parallaxContButton{
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.sliderDot{
+    display: block;
+    border-radius: 10px;
+    border: none;
+    
+    // width: "10px",
+    // height: "10px",
+    margin: -10px 0px;
+    background-color: white;
+}
+
+.slider{
+    min-height: 350px;
+    // border: "1px dashe orange",
+    height: 80vh;
+
+    @media (max-width: 992px) { 
+        height: 50vh;
+    }
+}
+
+.slideContainer{
+    height: 100%;
+    // border: 2px solid palevioletred;
+}
+
+.slide{
+    height: 100%;
+}
+
+.sliderImg{
+    position: absolute;
+    display: block;
+    width: auto;
+    right: 50%;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+
+    // border: 1px solid green;
+    // minHeight: "350px",
+    // border: "3px dotted green",
+
+    @media (max-width: 992px) { 
+        position: relative;
+        margin: auto;
+        right: 0px;
+    }
+}
+
+.sliderTextDivDesktop{
+    font-family: "Poppins", Helvetica, sans-serif;
+    left: 50%;
+}
+
+.sliderTextDivMobile{
+    font-family: "Poppins", Helvetica, sans-serif;
+    right: 0%;
+}
+
+.containerStyle{
+    overflow-y: hidden;
+    width: 100%;
+    max-height: 400px;
+}
+
+.imageStyle{
+    margin: auto;
+    width: 100%;
+    height: auto;
 }
 
 #hidden{

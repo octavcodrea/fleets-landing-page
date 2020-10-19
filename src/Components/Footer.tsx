@@ -24,7 +24,8 @@ const Footer = (props: FooterProps) => {
           <Row>
             <Col className="col-12 col-lg-6 border-bg-right pb-5">
               <Row className="border-bottom">
-                <h1 className="title pt-5" style={inlineStyles.title}>fleets</h1>
+                <div className="title-sm mt-5"></div>
+
               </Row>
               <Row>
                 <h3>
@@ -48,29 +49,29 @@ const Footer = (props: FooterProps) => {
               <Row>
                 <Col className="pb-5">
                   <ul className="list-unstyled">
-                    <li className="py-2" style={inlineStyles.cardParagraph}>Master Management</li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>Continuous Implementation</li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>Employee Engagement</li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>Change Management</li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>View more...</li>
+                    <li className="py-2 cardParagraph" >Master Management</li>
+                    <li className="py-2 cardParagraph" >Continuous Implementation</li>
+                    <li className="py-2 cardParagraph" >Employee Engagement</li>
+                    <li className="py-2 cardParagraph" >Change Management</li>
+                    <li className="py-2 cardParagraph" >View more...</li>
                   </ul>
                 </Col>
                 <Col>
                   <ul className="list-unstyled">
-                    <li className="py-2" style={inlineStyles.cardParagraph}>Master Management</li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>Continuous Implementation</li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>Employee Engagement</li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>Change </li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>View more...</li>
+                    <li className="py-2 cardParagraph" >Master Management</li>
+                    <li className="py-2 cardParagraph" >Continuous Implementation</li>
+                    <li className="py-2 cardParagraph" >Employee Engagement</li>
+                    <li className="py-2 cardParagraph" >Change </li>
+                    <li className="py-2 cardParagraph" >View more...</li>
                   </ul>
                 </Col>
                 <Col>
                   <ul className="list-unstyled">
-                    <li className="py-2" style={inlineStyles.cardParagraph}> Management</li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>Continuous </li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>Employee Engagement</li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>Change Management</li>
-                    <li className="py-2" style={inlineStyles.cardParagraph}>View more...</li>
+                    <li className="py-2 cardParagraph" > Management</li>
+                    <li className="py-2 cardParagraph" >Continuous </li>
+                    <li className="py-2 cardParagraph" >Employee Engagement</li>
+                    <li className="py-2 cardParagraph" >Change Management</li>
+                    <li className="py-2 cardParagraph" >View more...</li>
                   </ul>
                 </Col>
               </Row>

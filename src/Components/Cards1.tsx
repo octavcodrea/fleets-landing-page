@@ -47,7 +47,7 @@ const Cards1 = () =>{
                         <p className="mb-1">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, at aspernatur laudantium deserunt veritatis iusto magnam molestiae facere cupiditate odit, vero, velit nulla suscipit ratione quo debitis esse eius corporis?
                         </p>
-                        <a href="#" style={inlineStyles.colorAccent} className="my-0 py-0">Explore now <FaArrowRight className="mb-1" /> </a>
+                        <a href="#" className="my-0 py-0 colorAccent">Explore now <FaArrowRight className="mb-1" /> </a>
                     </Media.Body>
                 </Media>
 
@@ -66,7 +66,7 @@ const Cards1 = () =>{
                         ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
                         tempus viverra turpis. 
                         </p>
-                        <a href="#" style={inlineStyles.colorAccent} className="my-0 py-0">Explore now <FaArrowRight className="mb-1" /> </a>
+                        <a href="#" className="my-0 py-0 colorAccent">Explore now <FaArrowRight className="mb-1" /> </a>
                     </Media.Body>
                 </Media>
 
@@ -83,7 +83,7 @@ const Cards1 = () =>{
                         <p className="mb-1">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam doloribus incidunt rem cupiditate nulla hic eius nemo consectetur in illum!
                         </p>
-                        <a href="#" style={inlineStyles.colorAccent} className="my-0 py-0">Explore now <FaArrowRight className="mb-1" /> </a>
+                        <a href="#" className="my-0 py-0 colorAccent">Explore now <FaArrowRight className="mb-1" /> </a>
                     </Media.Body>
                 </Media>
 
@@ -100,13 +100,13 @@ const Cards1 = () =>{
                         <p className="mb-1">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsam soluta aperiam, dolor fugiat nulla libero nam. Esse officiis maiores obcaecati vel, quaerat quas deserunt aliquam minima placeat. Beatae, illo?
                         </p>
-                        <a href="#" style={inlineStyles.colorAccent} className="my-0 py-0">Explore now <FaArrowRight className="mb-1" /> </a>
+                        <a href="#" className="my-0 py-0 colorAccent">Explore now <FaArrowRight className="mb-1" /> </a>
                     </Media.Body>
                 </Media>
 
             </div>
             <div className="d-flex justify-content-center">
-                <Button className="px-4 py-3" style={inlineStyles.buttonAccentLight}>Let's See Our Features</Button>
+                <Button className="px-4 py-3 buttonAccentLight">Let's See Our Features</Button>
             </div>
         </div>
     )
