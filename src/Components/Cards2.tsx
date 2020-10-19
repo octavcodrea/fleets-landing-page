@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import { Media } from 'react-bootstrap';
 
 const Cards2 = () =>{
 
+    const [Yscroll, setYScroll] = useState(0);
+    const [showCards, setShowCards] = useState(false);
+
+    const handleScroll = () => {
+        let position = window.pageYOffset;
+        // console.log("position Y:",position);
+
+        setYScroll(position);
+        // console.log("scroll Y:",Yscroll);
+    };
+    
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        // , { passive: true });
+
+        handleScroll();
+        if(Yscroll >= 500) setShowCards(true);
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    // }, [useCallback(handleScroll, [Yscroll])]);
+    }, [Yscroll]);
+
     return(
-        <div>
-            <Media className="">
-                <Media.Body>
+        <div className="container">
+            <Media className="my-4 d-flex flex-wrap" id={showCards? "slidingLeft" : "hidden"}>
+                <Media.Body className="col-sm-12 col-lg-6 mt-3">
                     <h5>Media Heading</h5>
                     <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
@@ -16,23 +40,25 @@ const Cards2 = () =>{
                     </p>
                 </Media.Body>
                 <img
-                    width={256}
-                    height={128}
-                    className="mr-3"
-                    src="https://via.placeholder.com/256x128/222"
+                    width={512}
+                    height={256}
+                    className="mr-3 col-12 col-lg-6"
+                    style={{height: "auto"}}
+                    src="https://via.placeholder.com/512x256/73ffe2"
                     alt="Generic placeholder"
                 />
             </Media>
 
-            <Media className="">
+            <Media className="my-4 d-flex flex-wrap" id={showCards? "slidingRight" : "hidden"}>
                 <img
-                    width={256}
-                    height={128}
-                    className="mr-3"
-                    src="https://via.placeholder.com/256x128/ff2"
+                    width={512}
+                    height={256}
+                    style={{height: "auto"}}
+                    className="mr-3 col-sm-12 col-lg-6"
+                    src="https://via.placeholder.com/512x256/73ffe2"
                     alt="Generic placeholder"
                 />
-                <Media.Body>
+                <Media.Body className="col-12 col-lg-6 mt-3">
                     <h5>Media Heading</h5>
                     <p>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque

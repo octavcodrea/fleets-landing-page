@@ -4,7 +4,7 @@ import Cards2 from './Cards2';
 import Footer from './Footer';
 import Header from './Header';
 import ParallaxContainer from './ParallaxContainer';
-import Slider from './Slider';
+import SliderComponent from './Slider';
 
 class Main extends React.Component{
 
@@ -12,11 +12,11 @@ class Main extends React.Component{
         return(
             <React.Fragment>
                 <Header language="English"/>
-                <Slider />
+                <SliderComponent />
                 <Cards1 />
                 <Cards2 />
                 <ParallaxContainer />
-                <Footer />
+                <Footer language="English"/>
                 
             </React.Fragment>
         )
