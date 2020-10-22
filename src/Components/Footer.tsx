@@ -9,7 +9,7 @@ import {
 } from "react-bootstrap";
 import { FormattedMessage } from "react-intl";
 import { MdHeadsetMic, MdPerson } from "react-icons/md";
-import {inlineStyles} from "./InlineStyles";
+// import {inlineStyles} from "./InlineStyles";
 
 interface FooterProps {
   language: string;
@@ -17,61 +17,64 @@ interface FooterProps {
 
 const Footer = (props: FooterProps) => {
   return (
-    <div className="container-fluid ">
+    <div className="container-fluid footerContainer">
       {/* DESKTOP */}
-      <div className="d-flex w-100 border-top border-bottom">
+      <div className="d-flex w-100 border-bottom">
         <Container>
           <Row>
-            <Col className="col-12 col-lg-6 border-bg-right pb-5">
+            <Col className="col-12 col-lg-6 pb-5 px-4">
               <Row className="border-bottom">
                 <div className="title-sm mt-5"></div>
 
               </Row>
               <Row>
-                <h3>
+                <h4 className="footerHeader">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. At
                   alias rerum ex distinctio officia ut quia sit eaque. Eaque,
                   ut.
-                </h3>
+                </h4>
               </Row>
               <Row>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
               </Row>
             </Col>
             
-            <Col className="col-12 col-lg-6">
-              <Row className="border-bottom pt-5 pb-1">
+            <Col className="col-12 col-lg-6 pt-0 pt-lg-5 ">
+              {/* <Row className="pt-5 pb-1">
                 <Col className="text-uppercase font-weight-bold">Solutions</Col>
                 <Col className="text-uppercase font-weight-bold">Product</Col>
                 <Col className="text-uppercase font-weight-bold">Customers</Col>
-              </Row>
+              </Row> */}
 
               <Row>
                 <Col className="pb-5">
+                <div className="text-uppercase font-weight-bold">Solutions</div>
                   <ul className="list-unstyled">
-                    <li className="py-2 cardParagraph" >Master Management</li>
-                    <li className="py-2 cardParagraph" >Continuous Implementation</li>
-                    <li className="py-2 cardParagraph" >Employee Engagement</li>
-                    <li className="py-2 cardParagraph" >Change Management</li>
-                    <li className="py-2 cardParagraph" >View more...</li>
+                    <li className="py-2 listElementFooter" >Master Management</li>
+                    <li className="py-2 listElementFooter" >Continuous Implementation</li>
+                    <li className="py-2 listElementFooter" >Employee Engagement</li>
+                    <li className="py-2 listElementFooter" >Change Management</li>
+                    <li className="py-2 listElementFooter" >View more...</li>
                   </ul>
                 </Col>
                 <Col>
+                  <div className="text-uppercase font-weight-bold">Product</div>
                   <ul className="list-unstyled">
-                    <li className="py-2 cardParagraph" >Master Management</li>
-                    <li className="py-2 cardParagraph" >Continuous Implementation</li>
-                    <li className="py-2 cardParagraph" >Employee Engagement</li>
-                    <li className="py-2 cardParagraph" >Change </li>
-                    <li className="py-2 cardParagraph" >View more...</li>
+                    <li className="py-2 listElementFooter" >Master Management</li>
+                    <li className="py-2 listElementFooter" >Continuous Implementation</li>
+                    <li className="py-2 listElementFooter" >Employee Engagement</li>
+                    <li className="py-2 listElementFooter" >Change </li>
+                    <li className="py-2 listElementFooter" >View more...</li>
                   </ul>
                 </Col>
                 <Col>
+                <div className="text-uppercase font-weight-bold">Customers</div>
                   <ul className="list-unstyled">
-                    <li className="py-2 cardParagraph" > Management</li>
-                    <li className="py-2 cardParagraph" >Continuous </li>
-                    <li className="py-2 cardParagraph" >Employee Engagement</li>
-                    <li className="py-2 cardParagraph" >Change Management</li>
-                    <li className="py-2 cardParagraph" >View more...</li>
+                    <li className="py-2 listElementFooter" > Management</li>
+                    <li className="py-2 listElementFooter" >Continuous </li>
+                    <li className="py-2 listElementFooter" >Employee Engagement</li>
+                    <li className="py-2 listElementFooter" >Change Management</li>
+                    <li className="py-2 listElementFooter" >View more...</li>
                   </ul>
                 </Col>
               </Row>
@@ -81,7 +84,7 @@ const Footer = (props: FooterProps) => {
       </div>
 
       {/* DESKTOP */}
-      <div className="d-none d-lg-block container">
+      <div className="d-none d-lg-block container footerEnd">
         <div className="d-flex justify-content-between flex-wrap py-4" >
           <div className="d-flex col-12 col-lg-6" >
             <DropdownButton
@@ -119,7 +122,7 @@ const Footer = (props: FooterProps) => {
       </div>
 
       {/* MOBILE */}
-      <div className="d-block d-lg-none container">
+      <div className="d-block d-lg-none container footerEnd">
         <div className="d-flex justify-content-between flex-wrap py-4" >
           <div className="d-flex col-12 col-lg-6 justify-content-center" >
             <DropdownButton

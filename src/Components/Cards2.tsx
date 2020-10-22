@@ -1,42 +1,32 @@
 import React, { useState, useEffect} from 'react';
 import { Media } from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
 
-const Cards2 = () =>{
+interface CardsProps{
+    yscroll: number
+}
 
-    const [Yscroll, setYScroll] = useState(0);
+const Cards2 = (props: CardsProps) =>{
     const [showCards, setShowCards] = useState(false);
-
-    const handleScroll = () => {
-        let position = window.pageYOffset;
-        // console.log("position Y:",position);
-
-        setYScroll(position);
-        // console.log("scroll Y:",Yscroll);
-    };
     
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        // , { passive: true });
+        if(props.yscroll >= 800) setShowCards(true);
 
-        handleScroll();
-        if(Yscroll >= 500) setShowCards(true);
-        
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
     // }, [useCallback(handleScroll, [Yscroll])]);
-    }, [Yscroll]);
+    }, [props.yscroll]);
+
+    let textCardTitle1 = (<FormattedMessage id="card-2-1-title" defaultMessage="Feature1" />);
+    let textCard1 = (<FormattedMessage id="card-2-1-text1" defaultMessage="Feature1" />);
+    let textCardTitle2 = (<FormattedMessage id="card-2-2-title" defaultMessage="Feature1" />);
+    let textCard2 = (<FormattedMessage id="card-2-2-text1" defaultMessage="Feature1" />);
 
     return(
         <div className="container">
             <Media className="my-4 d-flex flex-wrap" id={showCards? "slidingLeft" : "hidden"}>
                 <Media.Body className="col-sm-12 col-lg-6 mt-3">
-                    <h5>Media Heading</h5>
+                    <h5>{textCardTitle1}</h5>
                     <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                    ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-                    tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-                    Donec lacinia congue felis in faucibus.
+                    {textCard1}
                     </p>
                 </Media.Body>
                 <img
@@ -59,12 +49,9 @@ const Cards2 = () =>{
                     alt="Generic placeholder"
                 />
                 <Media.Body className="col-12 col-lg-6 mt-3">
-                    <h5>Media Heading</h5>
+                    <h5>{textCardTitle2}</h5>
                     <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                    ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-                    tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-                    Donec lacinia congue felis in faucibus.
+                    {textCard2}
                     </p>
                 </Media.Body>
             </Media>

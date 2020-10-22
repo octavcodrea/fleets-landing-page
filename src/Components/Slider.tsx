@@ -17,11 +17,34 @@ import slider2mobile from "../Images/bg2-mobile.png";
 import slider3mobile from "../Images/bg3-mobile.png";
 
 import useWindowDimensions from '../Hooks/useWindowDimensions';
+import { FormattedMessage } from 'react-intl';
 
 const SliderComponent = () =>{
 
     const { height, width } = useWindowDimensions();
     // console.log("height:",height, "width:", width, "ratio: ", height/width);
+
+    let textTypewriter1 = (
+        <FormattedMessage id="slider-typewriter1" defaultMessage="Features" />
+      );
+    let textTypewriter2 = (
+        <FormattedMessage id="slider-typewriter2" defaultMessage="Features" />
+    );
+    let textTypewriter3 = (
+        <FormattedMessage id="slider-typewriter3" defaultMessage="Features" />
+    );
+    let textMoreAboutUs = (
+        <FormattedMessage id="slider-moreaboutus" defaultMessage="More about us" />
+    );
+    let textWatchVideo = (
+        <FormattedMessage id="slider-watchvideo" defaultMessage="More about us" />
+    );
+    let textHeader1 = (
+        <FormattedMessage id="slider-header1" defaultMessage="More about us" />
+    );
+    let textHeader2 = (
+        <FormattedMessage id="slider-header2" defaultMessage="More about us" />
+    );
 
 
     return(
@@ -135,8 +158,8 @@ const SliderComponent = () =>{
                         <div className="d-flex  justify-content-around">
                             <div>
                                 <p className="my-2 align-self-center fontPoppinsSmall d-inline">Watch video</p>
-                                <button className="py-1 px-4 mx-3 buttonAccentLightCircle"><FaPlay /></button>
-                                <button className="px-3 py-1 buttonAccentLightSmall">More about us</button>
+                                <button className="py-2 px-4 mx-3 buttonAccentLightCircle"><FaPlay /></button>
+                                <button className="px-3 py-2 buttonAccentLightSmall">More about us</button>
                             </div>
                         </div>
                     </div>

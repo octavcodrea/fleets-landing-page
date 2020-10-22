@@ -10,6 +10,7 @@ $accentColorDark2: #0a4035;
 
 $logo-width-3: 160px;
 $logo-width-2: 120px;
+$logo-width-1: 80px;
 
 .btn-navbarlink {
     color: #444444;
@@ -84,9 +85,37 @@ body{
     height: ($logo-width-2 * 0.45);
 }
 
+.title-xs{
+    @extend .title;
+
+    width: $logo-width-1;
+    height: ($logo-width-1 * 0.45);
+}
+
+.header{
+    z-index: 100;
+    transition: 0.5s;
+    // border: 1px solid red;
+}
+
+.header-sticky{
+    z-index: 100;
+    position: fixed;
+    margin: auto;
+    background-color: white;
+    width: 100%;
+    top: 0px;
+
+    animation: slideInTopNavbar 0.5s 1 forwards;
+
+    // border: 1px solid blue;
+}
+
+.navbar-container{
+    height: 110px;
+}
 
 .headerNavbarLink{
-    
     &:hover{
         color: $accentColor;
         background-color: white;
@@ -139,10 +168,12 @@ body{
     border-radius: 5px;
     transition: 0.4s;
 
+    .dropdown-toggle:after { content: none }
+
     &:hover{
         color: white;
         background-color: $accentColorDark1;
-        transform: translateY(-10px);
+        transform: translateY(-6px);
         box-shadow: 0px 5px 15px 0px rgba(219,219,219,1);
     }
 }
@@ -203,6 +234,7 @@ body{
 .parallaxContHeader{
     // fontFamily: '"Poppins", Helvetica, sans-serif',
     color: white;
+    font-weight: 600;
 }
 
 .parallaxContHeader2{
@@ -216,6 +248,12 @@ body{
     padding: 10px 20px;
     border-radius: 10px;
     color: white;
+    font-weight: 600;
+
+    &:hover{
+        background-color: white;
+        color: #444444;
+    }
 }
 
 .sliderDot{
@@ -290,6 +328,29 @@ body{
     height: auto;
 }
 
+.footerContainer{
+    background-color: #f8f9fa;
+}
+
+.footerHeader{
+    color: #444444;
+}
+
+.footerEnd{
+    color: #777;
+}
+
+.listElementFooter{
+    font-size: 0.9rem;
+    color: #777777;
+
+    &:hover{
+        color: $accentColor;
+        cursor: pointer;
+    }
+
+}
+
 #hidden{
     opacity: 0;
 }
@@ -323,5 +384,15 @@ body{
     100%{
         transform: translateX(0px);
         opacity: 1;
+    }
+}
+
+@keyframes slideInTopNavbar{
+    0%{
+        transform: translateY(-110px);
+    }
+
+    100%{
+        transform: translateY(0px);
     }
 }

@@ -1,34 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Media } from 'react-bootstrap';
-import {inlineStyles} from "./InlineStyles";
+// import {inlineStyles} from "./InlineStyles";
 import { FaArrowRight } from 'react-icons/fa';
+import { FormattedMessage } from 'react-intl';
 
+interface CardsProps{
+    yscroll: number
+}
 
-const Cards1 = () =>{
-
-    const [Yscroll, setYScroll] = useState(0);
+const Cards1 = (props: CardsProps) =>{
     const [showCards, setShowCards] = useState(false);
-
-    const handleScroll = () => {
-        let position = window.pageYOffset;
-        // console.log("position Y:",position);
-
-        setYScroll(position);
-        // console.log("scroll Y:",Yscroll);
-    };
     
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        // , { passive: true });
-
-        handleScroll();
-        if(Yscroll >= 200) setShowCards(true);
+        if(props.yscroll >= 400) setShowCards(true);
         
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
     // }, [useCallback(handleScroll, [Yscroll])]);
-    }, [Yscroll]);
+    }, [props.yscroll]);
+
+    let textCardTitle1 = (<FormattedMessage id="card-1-1-title" defaultMessage="Feature1" />);
+    let textCard1 = (<FormattedMessage id="card-1-1-text1" defaultMessage="Feature1" />);
+    let textCardTitle2 = (<FormattedMessage id="card-1-2-title" defaultMessage="Feature1" />);
+    let textCard2 = (<FormattedMessage id="card-1-2-text1" defaultMessage="Feature1" />);
+    let textCardTitle3 = (<FormattedMessage id="card-1-3-title" defaultMessage="Feature1" />);
+    let textCard3 = (<FormattedMessage id="card-1-3-text1" defaultMessage="Feature1" />);
+    let textCardTitle4 = (<FormattedMessage id="card-1-4-title" defaultMessage="Feature1" />);
+    let textCard4 = (<FormattedMessage id="card-1-4-text1" defaultMessage="Feature1" />);
+
+    let textExploreNow = (<FormattedMessage id="explore-now" defaultMessage="Feature1" />);
+    let textLetsSee = (<FormattedMessage id="lets-see-our-features" defaultMessage="Feature1" />);
 
     return(
         <div className="my-5">
@@ -43,11 +42,11 @@ const Cards1 = () =>{
                         alt="Generic placeholder"
                     />
                     <Media.Body>
-                        <h5>Get Started Immediatly</h5>
+                        <h5>{textCardTitle1}</h5>
                         <p className="mb-1">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, at aspernatur laudantium deserunt veritatis iusto magnam molestiae facere cupiditate odit, vero, velit nulla suscipit ratione quo debitis esse eius corporis?
+                        {textCard1}
                         </p>
-                        <a href="#" className="my-0 py-0 colorAccent">Explore now <FaArrowRight className="mb-1" /> </a>
+                        <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
                     </Media.Body>
                 </Media>
 
@@ -60,13 +59,11 @@ const Cards1 = () =>{
                         alt="Generic placeholder"
                     />
                     <Media.Body>
-                        <h5>Full Responsive</h5>
+                        <h5>{textCardTitle2}</h5>
                         <p className="mb-1">
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                        ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-                        tempus viverra turpis. 
+                        {textCard2}
                         </p>
-                        <a href="#" className="my-0 py-0 colorAccent">Explore now <FaArrowRight className="mb-1" /> </a>
+                        <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
                     </Media.Body>
                 </Media>
 
@@ -79,11 +76,11 @@ const Cards1 = () =>{
                         alt="Generic placeholder"
                     />
                     <Media.Body>
-                        <h5>Clean and Modern</h5>
+                        <h5>{textCardTitle3}</h5>
                         <p className="mb-1">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam doloribus incidunt rem cupiditate nulla hic eius nemo consectetur in illum!
+                        {textCard3}
                         </p>
-                        <a href="#" className="my-0 py-0 colorAccent">Explore now <FaArrowRight className="mb-1" /> </a>
+                        <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
                     </Media.Body>
                 </Media>
 
@@ -96,17 +93,17 @@ const Cards1 = () =>{
                         alt="Generic placeholder"
                     />
                     <Media.Body>
-                        <h5>Easy to Customize</h5>
+                        <h5>{textCardTitle4}</h5>
                         <p className="mb-1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsam soluta aperiam, dolor fugiat nulla libero nam. Esse officiis maiores obcaecati vel, quaerat quas deserunt aliquam minima placeat. Beatae, illo?
+                        {textCard4}
                         </p>
-                        <a href="#" className="my-0 py-0 colorAccent">Explore now <FaArrowRight className="mb-1" /> </a>
+                        <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
                     </Media.Body>
                 </Media>
 
             </div>
             <div className="d-flex justify-content-center">
-                <Button className="px-4 py-3 buttonAccentLight">Let's See Our Features</Button>
+                <Button className="px-4 py-3 buttonAccentLight">{textLetsSee}</Button>
             </div>
         </div>
     )

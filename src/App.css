@@ -58,7 +58,7 @@ body {
   color: #1AB394;
 }
 
-.title, .title-md, .title-sm {
+.title, .title-md, .title-sm, .title-xs {
   font-family: 'Arial', sans-serif;
   font-weight: bolder;
   background-image: url("./Images/fleets-logo.svg");
@@ -73,6 +73,32 @@ body {
 .title-sm {
   width: 120px;
   height: 54px;
+}
+
+.title-xs {
+  width: 80px;
+  height: 36px;
+}
+
+.header {
+  z-index: 100;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.header-sticky {
+  z-index: 100;
+  position: fixed;
+  margin: auto;
+  background-color: white;
+  width: 100%;
+  top: 0px;
+  -webkit-animation: slideInTopNavbar 0.5s 1 forwards;
+          animation: slideInTopNavbar 0.5s 1 forwards;
+}
+
+.navbar-container {
+  height: 110px;
 }
 
 .headerNavbarLink:hover {
@@ -130,11 +156,15 @@ body {
   transition: 0.4s;
 }
 
+.buttonAccent .dropdown-toggle:after, .buttonAccentLight .dropdown-toggle:after, .buttonAccentLightSmall .dropdown-toggle:after, .buttonAccentLightCircle .dropdown-toggle:after {
+  content: none;
+}
+
 .buttonAccent:hover, .buttonAccentLight:hover, .buttonAccentLightSmall:hover, .buttonAccentLightCircle:hover {
   color: white;
   background-color: #127561;
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
   -webkit-box-shadow: 0px 5px 15px 0px #dbdbdb;
           box-shadow: 0px 5px 15px 0px #dbdbdb;
 }
@@ -190,6 +220,7 @@ body {
 
 .parallaxContHeader {
   color: white;
+  font-weight: 600;
 }
 
 .parallaxContHeader2 {
@@ -203,6 +234,12 @@ body {
   padding: 10px 20px;
   border-radius: 10px;
   color: white;
+  font-weight: 600;
+}
+
+.parallaxContButton:hover {
+  background-color: white;
+  color: #444444;
 }
 
 .sliderDot {
@@ -272,6 +309,28 @@ body {
   height: auto;
 }
 
+.footerContainer {
+  background-color: #f8f9fa;
+}
+
+.footerHeader {
+  color: #444444;
+}
+
+.footerEnd {
+  color: #777;
+}
+
+.listElementFooter {
+  font-size: 0.9rem;
+  color: #777777;
+}
+
+.listElementFooter:hover {
+  color: #1AB394;
+  cursor: pointer;
+}
+
 #hidden {
   opacity: 0;
 }
@@ -335,6 +394,28 @@ body {
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideInTopNavbar {
+  0% {
+    -webkit-transform: translateY(-110px);
+            transform: translateY(-110px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes slideInTopNavbar {
+  0% {
+    -webkit-transform: translateY(-110px);
+            transform: translateY(-110px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
 }
 /*# sourceMappingURL=App.css.map */

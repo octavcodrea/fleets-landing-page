@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FormattedMessage } from "react-intl";
-import ReactCountryFlag from "react-country-flag"
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
@@ -8,12 +7,18 @@ import { MdHeadsetMic, MdPerson, MdLanguage } from "react-icons/md";
 import { FaFacebookF, FaTwitter, FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 
+import English from "../Languages/en-US.json";
+import Romanian from "../Languages/ro-RO.json";
+
 import { Col, Container, Row } from "react-bootstrap";
-import { accentColor } from "./InlineStyles";
+// import { accentColor } from "./InlineStyles";
 // import {inlineStyles} from "./InlineStyles";
 
 interface HeaderProps {
-  language: string;
+  language: string,
+  yscroll: number,
+  changeLangRo: any,
+  changeLangEn: any
 }
 
 interface StateTypes {
@@ -50,12 +55,22 @@ const Header = (props: HeaderProps) => {
       defaultMessage="How it works"
     />
   );
+
   let textContactUs = (
     <FormattedMessage id="navbar-link-contactus" defaultMessage="Contact Us" />
   );
   let textAccount = (
     <FormattedMessage id="navbar-button-account" defaultMessage="Account" />
   );
+
+  let textDropdown1 = (<FormattedMessage id="navbar-dropdownitem1" defaultMessage="Feature1" />);
+  let textDropdown2 = (<FormattedMessage id="navbar-dropdownitem2" defaultMessage="Feature2" />);
+  let textDropdown3 = (<FormattedMessage id="navbar-dropdownitem3" defaultMessage="Feature3" />);
+  let textDropdown4 = (<FormattedMessage id="navbar-dropdownitem4" defaultMessage="Feature4" />);
+  let textDropdown5 = (<FormattedMessage id="navbar-dropdownitem5" defaultMessage="Feature5" />);
+  let textDropdown6 = (<FormattedMessage id="navbar-dropdownitem6" defaultMessage="Feature6" />);
+  let textDropdown7 = (<FormattedMessage id="navbar-dropdownitem7" defaultMessage="Feature7" />);
+  let textDropdown8 = (<FormattedMessage id="navbar-dropdownitem8" defaultMessage="Feature8" />);
 
   const formatTopBar = () => {
     return (
@@ -67,11 +82,11 @@ const Header = (props: HeaderProps) => {
             title={props.language}
             variant="light"
           >
-            <Dropdown.Item as="button">
+            <Dropdown.Item as="button" onClick={props.changeLangEn}>
                 <i className="em em-flag-gb mx-1" aria-label="US"></i>
                  English</Dropdown.Item>
             {/* <Dropdown.Item as="button">German</Dropdown.Item> */}
-            <Dropdown.Item as="button">
+            <Dropdown.Item as="button" onClick={props.changeLangRo}>
                 <i className="em em-flag-ro mx-1" aria-label="RO"></i>
                 Romanian</Dropdown.Item>
           </DropdownButton>
@@ -79,7 +94,7 @@ const Header = (props: HeaderProps) => {
           <div className="mx-2 my-1">
             <div className="mx-2 d-inline-block fontPoppinsGray">
               <MdHeadsetMic />
-              <FormattedMessage id="phone-US" defaultMessage="+40 0000 0000" />
+              <FormattedMessage id="phone" defaultMessage="+40 0000 0000" />
             </div>
             |
             <div className="mx-2 d-inline-block">
@@ -97,12 +112,22 @@ const Header = (props: HeaderProps) => {
     );
   };
 
+  const formatNavbarContainer = () => {
+    return(
+      <div className="navbar-container">
+        <div className={props.yscroll < 250 ? "header" : "header-sticky"}> 
+          {formatNavbar()}
+        </div>
+      </div>
+    )
+  }
+
   const formatNavbar = () => {
     return (
-      <div className="container d-flex">
+      <div className="container">
         {/* DESKTOP */}
         <div className="navbar w-100 d-none d-lg-flex justify-content-between">
-          <div className="navbar d-none d-lg-flex my-2">
+          <div className="navbar d-none d-lg-flex my-1">
             <div className="align-self-first">
                 <div className="align-self-center my-0 title-md"></div>
               {/* <h1 className="title">fleets</h1> */}
@@ -118,9 +143,10 @@ const Header = (props: HeaderProps) => {
                     onMouseLeave={() => handleClose(0)}
                     show={isOpen[0]}
                   >
-                    <Dropdown.Item as="button">Feature1</Dropdown.Item>
-                    <Dropdown.Item as="button">Feature2</Dropdown.Item>
-                    <Dropdown.Item as="button">Feature3</Dropdown.Item>
+                    <Dropdown.Item as="button">{textDropdown1}</Dropdown.Item>
+                    <Dropdown.Item as="button">{textDropdown2}</Dropdown.Item>
+                    <Dropdown.Item as="button">{textDropdown3}</Dropdown.Item>
+                    <Dropdown.Item as="button">{textDropdown4}</Dropdown.Item>
                   </DropdownButton>
                 </li>
                 <li className="d-inline-block">
@@ -132,9 +158,10 @@ const Header = (props: HeaderProps) => {
                     onMouseLeave={() => handleClose(1)}
                     show={isOpen[1]}
                   >
-                    <Dropdown.Item as="button">Solution1</Dropdown.Item>
-                    <Dropdown.Item as="button">Solution2</Dropdown.Item>
-                    <Dropdown.Item as="button">Solution3</Dropdown.Item>
+                    <Dropdown.Item as="button">{textDropdown5}</Dropdown.Item>
+                    <Dropdown.Item as="button">{textDropdown6}</Dropdown.Item>
+                    <Dropdown.Item as="button">{textDropdown7}</Dropdown.Item>
+                    <Dropdown.Item as="button">{textDropdown8}</Dropdown.Item>
                   </DropdownButton>
                 </li>
                 <li className="d-inline-block">
@@ -183,7 +210,7 @@ const Header = (props: HeaderProps) => {
         <div className="d-flex my-3 d-lg-none justify-content-between">
           <div>
             {/* <h1 className="align-self-center my-0 title">fleets</h1> */}
-            <div className="align-self-center my-0 title"></div>
+            <div className="align-self-center my-0 title-sm"></div>
           </div>
 
             <div className="d-flex">
@@ -194,16 +221,16 @@ const Header = (props: HeaderProps) => {
                 {textAccount}
             </Button>
     
-            <div className="d-block align-self-center buttonAccent mx-2">
+            <div className="d-block align-self-center buttonAccent mx-2 p-1">
                 <DropdownButton
                 variant="link text-dark"
-                title={<GiHamburgerMenu />}
+                title={<GiHamburgerMenu color="white"/>}
                 >
-                <Dropdown.Item as="button">Features</Dropdown.Item>
-                <Dropdown.Item as="button">Solutions</Dropdown.Item>
-                <Dropdown.Item as="button">Pricing</Dropdown.Item>
-                <Dropdown.Item as="button">How it works</Dropdown.Item>
-                <Dropdown.Item as="button">Contact Us</Dropdown.Item>
+                <Dropdown.Item as="button">{textFeatures}</Dropdown.Item>
+                <Dropdown.Item as="button">{textSolutions}</Dropdown.Item>
+                <Dropdown.Item as="button">{textPricing}</Dropdown.Item>
+                <Dropdown.Item as="button">{textHowItWorks}</Dropdown.Item>
+                <Dropdown.Item as="button">{textContactUs}</Dropdown.Item>
                 </DropdownButton>
             </div>
           </div>
@@ -215,7 +242,7 @@ const Header = (props: HeaderProps) => {
   return (
     <header>
       {formatTopBar()}
-      {formatNavbar()}
+      {formatNavbarContainer()}
     </header>
   );
 };
