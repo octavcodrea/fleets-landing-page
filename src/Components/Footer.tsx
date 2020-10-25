@@ -12,13 +12,46 @@ import { MdHeadsetMic, MdPerson } from "react-icons/md";
 // import {inlineStyles} from "./InlineStyles";
 
 interface FooterProps {
-  language: string;
+  language: string,
+  changeLangRo: any,
+  changeLangEn: any
 }
 
 const Footer = (props: FooterProps) => {
+
+    let textFooterHeader1 = (<FormattedMessage id="footer-header1" defaultMessage="Feature1" />);
+    let textFooterHeader2 = (<FormattedMessage id="footer-header2" defaultMessage="Feature1" />);
+
+    let textFooterCol1Title = (<FormattedMessage id="footer-col1-title" defaultMessage="Feature1" />);
+    let textFooterCol2Title = (<FormattedMessage id="footer-col2-title" defaultMessage="Feature1" />);
+    let textFooterCol3Title = (<FormattedMessage id="footer-col3-title" defaultMessage="Feature1" />);
+
+    let textFooterCol11 = (<FormattedMessage id="footer-col1-1" defaultMessage="Feature1" />);
+    let textFooterCol12 = (<FormattedMessage id="footer-col1-2" defaultMessage="Feature1" />);
+    let textFooterCol13 = (<FormattedMessage id="footer-col1-3" defaultMessage="Feature1" />);
+    let textFooterCol14 = (<FormattedMessage id="footer-col1-4" defaultMessage="Feature1" />);
+    let textFooterCol15 = (<FormattedMessage id="footer-col1-5" defaultMessage="Feature1" />);
+
+    let textFooterCol21 = (<FormattedMessage id="footer-col2-1" defaultMessage="Feature1" />);
+    let textFooterCol22 = (<FormattedMessage id="footer-col2-2" defaultMessage="Feature1" />);
+    let textFooterCol23 = (<FormattedMessage id="footer-col2-3" defaultMessage="Feature1" />);
+    let textFooterCol24 = (<FormattedMessage id="footer-col2-4" defaultMessage="Feature1" />);
+    let textFooterCol25 = (<FormattedMessage id="footer-col2-5" defaultMessage="Feature1" />);
+
+    let textFooterCol31 = (<FormattedMessage id="footer-col3-1" defaultMessage="Feature1" />);
+    let textFooterCol32 = (<FormattedMessage id="footer-col3-2" defaultMessage="Feature1" />);
+    let textFooterCol33 = (<FormattedMessage id="footer-col3-3" defaultMessage="Feature1" />);
+    let textFooterCol34 = (<FormattedMessage id="footer-col3-4" defaultMessage="Feature1" />);
+    let textFooterCol35 = (<FormattedMessage id="footer-col3-5" defaultMessage="Feature1" />);
+
+    let textFooterLink1 = (<FormattedMessage id="footer-link1" defaultMessage="Feature1" />);
+    let textFooterLink2 = (<FormattedMessage id="footer-link2" defaultMessage="Feature1" />);
+    let textFooterLink3 = (<FormattedMessage id="footer-link3" defaultMessage="Feature1" />);
+    let textFooterLink4 = (<FormattedMessage id="footer-link4" defaultMessage="Feature1" />);
+    let textFooterLink5 = (<FormattedMessage id="footer-link5" defaultMessage="Feature1" />);
+
   return (
     <div className="container-fluid footerContainer">
-      {/* DESKTOP */}
       <div className="d-flex w-100 border-bottom">
         <Container>
           <Row>
@@ -29,13 +62,11 @@ const Footer = (props: FooterProps) => {
               </Row>
               <Row>
                 <h4 className="footerHeader">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                  alias rerum ex distinctio officia ut quia sit eaque. Eaque,
-                  ut.
+                  {textFooterHeader1}
                 </h4>
               </Row>
               <Row>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <p>{textFooterHeader2}</p>
               </Row>
             </Col>
             
@@ -48,33 +79,33 @@ const Footer = (props: FooterProps) => {
 
               <Row>
                 <Col className="pb-5">
-                <div className="text-uppercase font-weight-bold">Solutions</div>
+                <div className="text-uppercase font-weight-bold">{textFooterCol1Title}</div>
                   <ul className="list-unstyled">
-                    <li className="py-2 listElementFooter" >Master Management</li>
-                    <li className="py-2 listElementFooter" >Continuous Implementation</li>
-                    <li className="py-2 listElementFooter" >Employee Engagement</li>
-                    <li className="py-2 listElementFooter" >Change Management</li>
-                    <li className="py-2 listElementFooter" >View more...</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol11}</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol12}</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol13}</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol14}</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol15}</li>
                   </ul>
                 </Col>
                 <Col>
-                  <div className="text-uppercase font-weight-bold">Product</div>
+                  <div className="text-uppercase font-weight-bold">{textFooterCol2Title}</div>
                   <ul className="list-unstyled">
-                    <li className="py-2 listElementFooter" >Master Management</li>
-                    <li className="py-2 listElementFooter" >Continuous Implementation</li>
-                    <li className="py-2 listElementFooter" >Employee Engagement</li>
-                    <li className="py-2 listElementFooter" >Change </li>
-                    <li className="py-2 listElementFooter" >View more...</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol21}</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol22}</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol23}</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol24} </li>
+                    <li className="py-2 listElementFooter" >{textFooterCol25}</li>
                   </ul>
                 </Col>
                 <Col>
-                <div className="text-uppercase font-weight-bold">Customers</div>
+                <div className="text-uppercase font-weight-bold">{textFooterCol3Title}</div>
                   <ul className="list-unstyled">
-                    <li className="py-2 listElementFooter" > Management</li>
-                    <li className="py-2 listElementFooter" >Continuous </li>
-                    <li className="py-2 listElementFooter" >Employee Engagement</li>
-                    <li className="py-2 listElementFooter" >Change Management</li>
-                    <li className="py-2 listElementFooter" >View more...</li>
+                    <li className="py-2 listElementFooter" > {textFooterCol31}</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol32} </li>
+                    <li className="py-2 listElementFooter" >{textFooterCol33}</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol34}</li>
+                    <li className="py-2 listElementFooter" >{textFooterCol35}</li>
                   </ul>
                 </Col>
               </Row>
@@ -92,9 +123,8 @@ const Footer = (props: FooterProps) => {
               title={props.language}
               variant="light"
             >
-              <Dropdown.Item as="button">English</Dropdown.Item>
-              <Dropdown.Item as="button">German</Dropdown.Item>
-              <Dropdown.Item as="button">Romanian</Dropdown.Item>
+              <Dropdown.Item as="button" onClick={props.changeLangEn}>English</Dropdown.Item>
+              <Dropdown.Item as="button" onClick={props.changeLangRo}>Romanian</Dropdown.Item>
             </DropdownButton>
 
 
@@ -111,11 +141,11 @@ const Footer = (props: FooterProps) => {
 
           <div className="links col-12 col-lg-6" >
             <ul className="d-flex my-1 justify-content-end list-unstyled">
-              <li className="mx-2">fleets</li>
-              <li className="mx-2">link1</li>
-              <li className="mx-2">link2</li>
-              <li className="mx-2">link3</li>
-              <li className="mx-2">link4</li>
+              <li className="mx-2">{textFooterLink1}</li>
+              <li className="mx-2">{textFooterLink2}</li>
+              <li className="mx-2">{textFooterLink3}</li>
+              <li className="mx-2">{textFooterLink4}</li>
+              <li className="mx-2">{textFooterLink5}</li>
             </ul>
           </div>
         </div>
@@ -130,9 +160,8 @@ const Footer = (props: FooterProps) => {
               title={props.language}
               variant="light"
             >
-              <Dropdown.Item as="button">English</Dropdown.Item>
-              <Dropdown.Item as="button">German</Dropdown.Item>
-              <Dropdown.Item as="button">Romanian</Dropdown.Item>
+              <Dropdown.Item as="button" onClick={props.changeLangEn}>English</Dropdown.Item>
+              <Dropdown.Item as="button" onClick={props.changeLangRo}>Romanian</Dropdown.Item>
             </DropdownButton>
 
 
@@ -149,11 +178,11 @@ const Footer = (props: FooterProps) => {
 
           <div className="links col-12 col-lg-6" >
             <ul className="d-flex my-1 justify-content-center list-unstyled">
-              <li className="mx-2">fleets</li>
-              <li className="mx-2">link1</li>
-              <li className="mx-2">link2</li>
-              <li className="mx-2">link3</li>
-              <li className="mx-2">link4</li>
+            <li className="mx-2">{textFooterLink1}</li>
+              <li className="mx-2">{textFooterLink2}</li>
+              <li className="mx-2">{textFooterLink3}</li>
+              <li className="mx-2">{textFooterLink4}</li>
+              <li className="mx-2">{textFooterLink5}</li>
             </ul>
           </div>
         </div>

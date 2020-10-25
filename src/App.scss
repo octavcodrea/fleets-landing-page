@@ -5,8 +5,8 @@ $accentColorLight3: #d4fff6;
 $accentColorLight2: #73ffe2;
 $accentColorLight1: #3bebc7;
 $accentColor: #1AB394;
-$accentColorDark1: #127561;
-$accentColorDark2: #0a4035;
+$accentColorDark1: #069478;
+$accentColorDark2: #0a5c4b;
 
 $logo-width-3: 160px;
 $logo-width-2: 120px;
@@ -48,14 +48,14 @@ body{
 }
 
 .type-wrap{
-    font-size: 2rem;
+    font-size: 3rem;
 
     @media screen and (min-width: 768px) and (max-width: 1440px){
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     @media screen and (max-width: 768px){
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -63,9 +63,30 @@ body{
     color: $accentColor;
 }
 
+//HEADER
+
+.header-topbar-visible{
+    position: relative;
+    transform: translateY(0);
+    margin-bottom: 0px;
+
+    z-index: 2000;
+    transition: 0.3s;
+}
+
+.header-topbar-hidden{
+    position: relative;
+    transform: translateY(-50px);
+    margin-bottom: -40px;
+
+    z-index: 0;
+    transition: 0.3s;
+}
+
 .title{
     font-family: 'Arial', sans-serif;
     font-weight: bolder;
+    transition: 0.3s;
 
     background-image: url("./Images/fleets-logo.svg");
     background-size: cover;
@@ -93,48 +114,52 @@ body{
 }
 
 .header{
-    z-index: 100;
-    transition: 0.5s;
-    // border: 1px solid red;
-}
-
-.header-sticky{
-    z-index: 100;
+    z-index: 50;
     position: fixed;
-    margin: auto;
     background-color: white;
     width: 100%;
     top: 0px;
-
-    animation: slideInTopNavbar 0.5s 1 forwards;
-
-    // border: 1px solid blue;
+    transition: 0.5s;
 }
+
+// .header-sticky{
+//     z-index: 100;
+//     position: fixed;
+//     margin: auto;
+//     background-color: white;
+//     width: 100%;
+//     top: 0px;
+
+//     transition: 0.5s;
+// }
 
 .navbar-container{
     height: 110px;
 }
 
 .headerNavbarLink{
+    // z-index: 0;
+    background-color: transparent;
+
     &:hover{
         color: $accentColor;
-        background-color: white;
+        background-color: transparent;
         border: none;
     }
 
+    .dropdown-toggle:after { content: none }
 }
 
 .dropdown-menu{
+    border-top: 4px solid $accentColor;
     box-shadow: 0px 0px 24px -6px rgba(82,91,102,0.66);
     opacity: 0;
     transition: 0.3s;
-    z-index: 100;
-    transform: translateY(0);
+    transform: translateY(38px);
 }
 
 .show{
     opacity: 1;
-    z-index: 100;
 }
 
 .fontPoppins{
@@ -182,7 +207,7 @@ body{
     @extend .buttonAccent;
 
     background-color: $accentColorLight1;
-    color: $accentColorDark2;
+    color: $accentColorDark1;
 }
 
 .buttonAccentLightSmall{
@@ -195,6 +220,28 @@ body{
     @extend .buttonAccentLight;
 
     border-radius: 25px;
+}
+
+.buttonBackToTop{
+    @extend .buttonAccent;
+
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+
+    width: 50px;
+    height: 50px;
+}
+
+#buttonBackToTopHidden{
+    opacity: 0;
+
+    animation: fadeOut 0.4s 1 ;
+
+    &:hover{
+        opacity: 1;
+    }
 }
 
 .buttonGray{
@@ -226,20 +273,49 @@ body{
     font-family: "Poppins", Helvetica, sans-serif;
 }
 
+//PARALLAX CONTAINER
+
 .parallaxContTextbox{
-    top: -270px;
-    
+    top: 150px;
+    // border: 1px solid salmon;
+    z-index: 10;
+
+    // @media screen and (max-width: 992px){
+    //     top: 60px;
+    // }
+}
+
+.parallax-top{
+    z-index: 10;
+    background-image: url("./Images/parallax-container-edge.svg");
+    height: 100px;
+    transform: scaleY(-1) scaleX(-1);
+    // border: 1px solid red;
+}
+
+.parallax-bottom{
+    z-index: 10;
+    background-image: url("./Images/parallax-container-edge.svg");
+    height: 100px;
+    bottom: 0%;
+    // border: 1px solid red;
 }
 
 .parallaxContHeader{
     // fontFamily: '"Poppins", Helvetica, sans-serif',
     color: white;
     font-weight: 600;
+    font-size: 3rem;
+
+    @media screen and (max-width: 992px){
+        font-size: 2rem;
+    }
 }
 
 .parallaxContHeader2{
     font-family: "Poppins", Helvetica, sans-serif;
     color: white;
+    font-size: 1.5rem;
 }
 
 .parallaxContButton{
@@ -255,6 +331,18 @@ body{
         color: #444444;
     }
 }
+
+.containerStyle{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    height: 500px;
+    max-height: 500px;
+
+    // border: 1px solid blue;
+}
+
+//SLIDER
 
 .sliderDot{
     display: block;
@@ -316,11 +404,7 @@ body{
     right: 0%;
 }
 
-.containerStyle{
-    overflow-y: hidden;
-    width: 100%;
-    max-height: 400px;
-}
+
 
 .imageStyle{
     margin: auto;
@@ -351,8 +435,18 @@ body{
 
 }
 
+//ANIMATION
 #hidden{
     opacity: 0;
+}
+
+#fadingIn{
+    animation: fadeIn 0.4s 1 forwards;
+}
+
+#fadingOut{
+    opacity: 0;
+    animation: fadeOut 0.4s 1 forwards;
 }
 
 #slidingLeft{
@@ -395,4 +489,14 @@ body{
     100%{
         transform: translateY(0px);
     }
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0};
+    100%{opacity: 1}
+}
+
+@keyframes fadeOut{
+    0%{opacity: 1};
+    100%{opacity: 0}
 }

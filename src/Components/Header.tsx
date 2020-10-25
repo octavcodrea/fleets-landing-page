@@ -3,12 +3,9 @@ import { FormattedMessage } from "react-intl";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
-import { MdHeadsetMic, MdPerson, MdLanguage } from "react-icons/md";
+import { MdHeadsetMic, MdPerson, MdLanguage, MdKeyboardArrowDown } from "react-icons/md";
 import { FaFacebookF, FaTwitter, FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-
-import English from "../Languages/en-US.json";
-import Romanian from "../Languages/ro-RO.json";
 
 import { Col, Container, Row } from "react-bootstrap";
 // import { accentColor } from "./InlineStyles";
@@ -18,7 +15,8 @@ interface HeaderProps {
   language: string,
   yscroll: number,
   changeLangRo: any,
-  changeLangEn: any
+  changeLangEn: any,
+  languageFlag: string
 }
 
 interface StateTypes {
@@ -40,11 +38,19 @@ const Header = (props: HeaderProps) => {
     );
   };
 
+  const scrollThreshold = 200;
+
   let textFeatures = (
-    <FormattedMessage id="navbar-link-features" defaultMessage="Features" />
+    <div>
+      <FormattedMessage id="navbar-link-features" defaultMessage="Features" />
+      <MdKeyboardArrowDown className="mx-1"/>
+    </div>
   );
   let textSolutions = (
-    <FormattedMessage id="navbar-link-solutions" defaultMessage="Solutions" />
+    <div>
+      <FormattedMessage id="navbar-link-solutions" defaultMessage="Solutions" />
+      <MdKeyboardArrowDown className="mx-1"/>
+    </div>
   );
   let textPricing = (
     <FormattedMessage id="navbar-link-pricing" defaultMessage="Pricing" />
@@ -73,8 +79,9 @@ const Header = (props: HeaderProps) => {
   let textDropdown8 = (<FormattedMessage id="navbar-dropdownitem8" defaultMessage="Feature8" />);
 
   const formatTopBar = () => {
+
     return (
-      <Container>
+      <Container className={props.yscroll < scrollThreshold ? "header-topbar-visible" : "header-topbar-hidden"}>
         <Row>
           <Col></Col>
           <DropdownButton
@@ -84,11 +91,14 @@ const Header = (props: HeaderProps) => {
           >
             <Dropdown.Item as="button" onClick={props.changeLangEn}>
                 <i className="em em-flag-gb mx-1" aria-label="US"></i>
-                 English</Dropdown.Item>
-            {/* <Dropdown.Item as="button">German</Dropdown.Item> */}
+                 English
+            </Dropdown.Item>
+
             <Dropdown.Item as="button" onClick={props.changeLangRo}>
                 <i className="em em-flag-ro mx-1" aria-label="RO"></i>
-                Romanian</Dropdown.Item>
+                Romanian
+            </Dropdown.Item>
+
           </DropdownButton>
 
           <div className="mx-2 my-1">
@@ -115,7 +125,9 @@ const Header = (props: HeaderProps) => {
   const formatNavbarContainer = () => {
     return(
       <div className="navbar-container">
-        <div className={props.yscroll < 250 ? "header" : "header-sticky"}> 
+        {/* <div className={props.yscroll < scrollThreshold ? "header" : "header-sticky"}> */} 
+        <div className="header">
+          {formatTopBar()}
           {formatNavbar()}
         </div>
       </div>
@@ -129,7 +141,7 @@ const Header = (props: HeaderProps) => {
         <div className="navbar w-100 d-none d-lg-flex justify-content-between">
           <div className="navbar d-none d-lg-flex my-1">
             <div className="align-self-first">
-                <div className="align-self-center my-0 title-md"></div>
+                <div className={props.yscroll < scrollThreshold ? "align-self-center my-0 title-md" : "align-self-center my-0 title-sm"}></div>
               {/* <h1 className="title">fleets</h1> */}
             </div>
             <div>
@@ -142,6 +154,7 @@ const Header = (props: HeaderProps) => {
                     onMouseEnter={() => handleOpen(0)}
                     onMouseLeave={() => handleClose(0)}
                     show={isOpen[0]}
+                    
                   >
                     <Dropdown.Item as="button">{textDropdown1}</Dropdown.Item>
                     <Dropdown.Item as="button">{textDropdown2}</Dropdown.Item>
@@ -241,7 +254,7 @@ const Header = (props: HeaderProps) => {
 
   return (
     <header>
-      {formatTopBar()}
+
       {formatNavbarContainer()}
     </header>
   );

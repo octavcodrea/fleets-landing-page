@@ -39,18 +39,18 @@ body {
 }
 
 .type-wrap {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .type-wrap {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .type-wrap {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -58,9 +58,31 @@ body {
   color: #1AB394;
 }
 
+.header-topbar-visible {
+  position: relative;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  margin-bottom: 0px;
+  z-index: 2000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.header-topbar-hidden {
+  position: relative;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  margin-bottom: -40px;
+  z-index: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .title, .title-md, .title-sm, .title-xs {
   font-family: 'Arial', sans-serif;
   font-weight: bolder;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   background-image: url("./Images/fleets-logo.svg");
   background-size: cover;
 }
@@ -81,46 +103,46 @@ body {
 }
 
 .header {
-  z-index: 100;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.header-sticky {
-  z-index: 100;
+  z-index: 50;
   position: fixed;
-  margin: auto;
   background-color: white;
   width: 100%;
   top: 0px;
-  -webkit-animation: slideInTopNavbar 0.5s 1 forwards;
-          animation: slideInTopNavbar 0.5s 1 forwards;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .navbar-container {
   height: 110px;
 }
 
+.headerNavbarLink {
+  background-color: transparent;
+}
+
 .headerNavbarLink:hover {
   color: #1AB394;
-  background-color: white;
+  background-color: transparent;
   border: none;
 }
 
+.headerNavbarLink .dropdown-toggle:after {
+  content: none;
+}
+
 .dropdown-menu {
+  border-top: 4px solid #1AB394;
   -webkit-box-shadow: 0px 0px 24px -6px rgba(82, 91, 102, 0.66);
           box-shadow: 0px 0px 24px -6px rgba(82, 91, 102, 0.66);
   opacity: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  z-index: 100;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: translateY(38px);
+          transform: translateY(38px);
 }
 
 .show {
   opacity: 1;
-  z-index: 100;
 }
 
 .fontPoppins {
@@ -147,7 +169,7 @@ body {
   opacity: 1;
 }
 
-.buttonAccent, .buttonAccentLight, .buttonAccentLightSmall, .buttonAccentLightCircle {
+.buttonAccent, .buttonAccentLight, .buttonAccentLightSmall, .buttonAccentLightCircle, .buttonBackToTop {
   background-color: #1AB394;
   color: white;
   border: none;
@@ -156,13 +178,13 @@ body {
   transition: 0.4s;
 }
 
-.buttonAccent .dropdown-toggle:after, .buttonAccentLight .dropdown-toggle:after, .buttonAccentLightSmall .dropdown-toggle:after, .buttonAccentLightCircle .dropdown-toggle:after {
+.buttonAccent .dropdown-toggle:after, .buttonAccentLight .dropdown-toggle:after, .buttonAccentLightSmall .dropdown-toggle:after, .buttonAccentLightCircle .dropdown-toggle:after, .buttonBackToTop .dropdown-toggle:after {
   content: none;
 }
 
-.buttonAccent:hover, .buttonAccentLight:hover, .buttonAccentLightSmall:hover, .buttonAccentLightCircle:hover {
+.buttonAccent:hover, .buttonAccentLight:hover, .buttonAccentLightSmall:hover, .buttonAccentLightCircle:hover, .buttonBackToTop:hover {
   color: white;
-  background-color: #127561;
+  background-color: #069478;
   -webkit-transform: translateY(-6px);
           transform: translateY(-6px);
   -webkit-box-shadow: 0px 5px 15px 0px #dbdbdb;
@@ -171,7 +193,7 @@ body {
 
 .buttonAccentLight, .buttonAccentLightSmall, .buttonAccentLightCircle {
   background-color: #3bebc7;
-  color: #0a4035;
+  color: #069478;
 }
 
 .buttonAccentLightSmall {
@@ -180,6 +202,25 @@ body {
 
 .buttonAccentLightCircle {
   border-radius: 25px;
+}
+
+.buttonBackToTop {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+}
+
+#buttonBackToTopHidden {
+  opacity: 0;
+  -webkit-animation: fadeOut 0.4s 1;
+          animation: fadeOut 0.4s 1;
+}
+
+#buttonBackToTopHidden:hover {
+  opacity: 1;
 }
 
 .buttonGray {
@@ -215,17 +256,41 @@ body {
 }
 
 .parallaxContTextbox {
-  top: -270px;
+  top: 150px;
+  z-index: 10;
+}
+
+.parallax-top {
+  z-index: 10;
+  background-image: url("./Images/parallax-container-edge.svg");
+  height: 100px;
+  -webkit-transform: scaleY(-1) scaleX(-1);
+          transform: scaleY(-1) scaleX(-1);
+}
+
+.parallax-bottom {
+  z-index: 10;
+  background-image: url("./Images/parallax-container-edge.svg");
+  height: 100px;
+  bottom: 0%;
 }
 
 .parallaxContHeader {
   color: white;
   font-weight: 600;
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 992px) {
+  .parallaxContHeader {
+    font-size: 2rem;
+  }
 }
 
 .parallaxContHeader2 {
   font-family: "Poppins", Helvetica, sans-serif;
   color: white;
+  font-size: 1.5rem;
 }
 
 .parallaxContButton {
@@ -240,6 +305,14 @@ body {
 .parallaxContButton:hover {
   background-color: white;
   color: #444444;
+}
+
+.containerStyle {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  height: 500px;
+  max-height: 500px;
 }
 
 .sliderDot {
@@ -297,12 +370,6 @@ body {
   right: 0%;
 }
 
-.containerStyle {
-  overflow-y: hidden;
-  width: 100%;
-  max-height: 400px;
-}
-
 .imageStyle {
   margin: auto;
   width: 100%;
@@ -333,6 +400,17 @@ body {
 
 #hidden {
   opacity: 0;
+}
+
+#fadingIn {
+  -webkit-animation: fadeIn 0.4s 1 forwards;
+          animation: fadeIn 0.4s 1 forwards;
+}
+
+#fadingOut {
+  opacity: 0;
+  -webkit-animation: fadeOut 0.4s 1 forwards;
+          animation: fadeOut 0.4s 1 forwards;
 }
 
 #slidingLeft {
@@ -416,6 +494,42 @@ body {
   100% {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 /*# sourceMappingURL=App.css.map */

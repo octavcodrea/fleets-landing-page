@@ -15,59 +15,75 @@ const ParallaxContainer = () =>{
     const styles:StylesDictionary  = {
         containerStyle:{
             overflowY: "hidden",
+            overflowX: "hidden",
             width: "100%",
             maxHeight: "400px"
         },
 
         imageStyle :{
             margin: "auto",
-            width: "100%",
-            height: "auto"
+            width: "auto",
+            height: "100%",
+            minHeight: "400px",
+            overflowX: "hidden"
+
         }
     };
 
-    let header1Title = (<FormattedMessage id="card-2-1-title" defaultMessage="Feature1" />);
+    let textPrxHeader1 = (<FormattedMessage id="prx-container-header1" defaultMessage="Feature1" />);
+    let textPrxHeader2 = (<FormattedMessage id="prx-container-header2" defaultMessage="Feature1" />);
+    let textPrxButton = (<FormattedMessage id="prx-container-button" defaultMessage="Feature1" />);
+
+    let textPrxHeader3 = (<FormattedMessage id="prx-container-header1" defaultMessage="Feature1" />);
+    let textPrxHeader4 = (<FormattedMessage id="prx-container-header2" defaultMessage="Feature1" />);
+    let textPrxButtonGetStarted = (<FormattedMessage id="prx-container-button-getstarted" defaultMessage="Feature1" />);
+    let textPrxButtonGetInTouch = (<FormattedMessage id="prx-container-button-getintouch" defaultMessage="Feature1" />);
 
     return(
 
         <div className="container-fluid mx-0 px-0 position-relative">
-            <ParallaxProvider>
-                <div className="d-block containerStyle" >
-                    <Parallax y={[10, -30]}>
-                        <img style={styles.imageStyle} 
-                            src={image} alt=""/>
-                    </Parallax>
-                </div>
-            </ParallaxProvider>
-            
-            <div className="container position-relative" >
+
+            <div className="container w-100 position-relative" >
                 <div className="position-absolute parallaxContTextbox">
-                    <h1 className="parallaxContHeader">Let's Work Together</h1>
-                    <p className="parallaxContHeader2">Get in touch with us and let us help you. We can make your project come true.</p>
-                    <button className="parallaxContButton">Get Started</button>
+                    <h1 className="parallaxContHeader">{textPrxHeader1}</h1>
+                    <p className="parallaxContHeader2">{textPrxHeader2}</p>
+                    <button className="parallaxContButton">{textPrxButton}</button>
                 </div>
             </div>
 
+            <div className="parallax-top w-100 position-absolute"></div>
+            <ParallaxProvider>
+                <div className="d-block containerStyle position-relative" >
+                    <Parallax y={[0, -50]}>
+                        <img style={styles.imageStyle} 
+                            src={image} alt=""/>
+                    </Parallax>
+                    <div className="parallax-bottom w-100 position-absolute"></div>
+                </div>
+                
+            </ParallaxProvider>
+            
+
             <div className="container justify-content-center py-4">
                 <Row className="d-flex flex-wrap">
-                    <Col className="col-12 col-lg-8 pt-3">
+                    <Col className="col-12 col-lg-8 pt-4">
                         {/* DESKTOP */}
                         <div className="d-none d-lg-block">
-                            <h3 className="h3Accent">Ready to get started?</h3>
-                            <h3 className="h3Black">Create a free account or get in touch.</h3>
+                            <h3 className="h3Accent">{textPrxHeader3}</h3>
+                            <h3 className="h3Black">{textPrxHeader4}</h3>
                         </div>
 
                         {/* MOBILE */}
                         <div className="d-block d-lg-none text-center">
-                            <h3 className="h3Accent">Ready to get started?</h3>
-                            <h3 className="h3Black">Create a free account or get in touch.</h3>
+                            <h3 className="h3Accent">{textPrxHeader3}</h3>
+                            <h3 className="h3Black">{textPrxHeader4}</h3>
                         </div>
                     </Col>
                     
-                    <Col className="d-flex col-12 col-lg-4 justify-content-center">
+                    <Col className="d-flex col-12 col-lg-4 justify-content-center align-self-center">
                         <div className="py-3">
-                            <Button className="mx-2 px-4 py-2 my-1 buttonAccent">Get Started</Button>
-                            <Button className="mx-2 px-4 py-2 my-1 buttonGray">Get in Touch</Button>
+                            <Button className="mx-2 px-4 py-3 my-1 buttonAccent">{textPrxButtonGetStarted}</Button>
+                            <Button className="mx-2 px-4 py-3 my-1 buttonGray">{textPrxButtonGetInTouch}</Button>
                         </div>
                     </Col>
                 </Row>

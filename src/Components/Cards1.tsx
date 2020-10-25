@@ -102,7 +102,7 @@ const Cards1 = (props: CardsProps) =>{
                 </Media>
 
             </div>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex my-3 justify-content-center">
                 <Button className="px-4 py-3 buttonAccentLight">{textLetsSee}</Button>
             </div>
         </div>
