@@ -6,7 +6,7 @@ $accentColorLight2: #73ffe2;
 $accentColorLight1: #3bebc7;
 $accentColor: #1AB394;
 $accentColorDark1: #069478;
-$accentColorDark2: #0a5c4b;
+$accentColorDark2: #006e58;
 
 $logo-width-3: 160px;
 $logo-width-2: 120px;
@@ -61,6 +61,16 @@ body{
 
 .colorAccent{
     color: $accentColor;
+}
+
+a.colorAccent{
+    // padding: 1px 0px;
+
+    &:hover{
+        color: $accentColorDark1;
+        text-decoration: none;
+    }
+
 }
 
 //HEADER
@@ -122,16 +132,18 @@ body{
     transition: 0.5s;
 }
 
-// .header-sticky{
-//     z-index: 100;
-//     position: fixed;
-//     margin: auto;
-//     background-color: white;
-//     width: 100%;
-//     top: 0px;
+.header-sticky{
+    @extend .header;
 
-//     transition: 0.5s;
-// }
+    box-shadow: 0px 0px 24px -6px rgba(82,91,102,0.66);
+}
+
+
+#languageSelectMenu{
+   border: 1px solid red;
+}
+
+
 
 .navbar-container{
     height: 110px;
@@ -151,7 +163,8 @@ body{
 }
 
 .dropdown-menu{
-    border-top: 4px solid $accentColor;
+    // border-top: 4px solid $accentColor;
+    border-radius: 0px;
     box-shadow: 0px 0px 24px -6px rgba(82,91,102,0.66);
     opacity: 0;
     transition: 0.3s;
@@ -200,6 +213,10 @@ body{
         background-color: $accentColorDark1;
         transform: translateY(-6px);
         box-shadow: 0px 5px 15px 0px rgba(219,219,219,1);
+    }
+
+    &:active{
+        background-color: $accentColorDark2;
     }
 }
 
@@ -259,6 +276,10 @@ body{
     }
 }
 
+.btn-accent{
+    @extend .buttonAccent;
+}
+
 .h3Accent{
     font-family: "Poppins", Helvetica, sans-serif;
     color: $accentColor;
@@ -271,6 +292,22 @@ body{
 
 .cardParagraph{
     font-family: "Poppins", Helvetica, sans-serif;
+}
+
+.cardSmall{
+    // border: 1px solid red;
+    // display: block;
+    // position: relative;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 24px -6px rgba(154, 164, 177, 0.66);
+    transition: 0.3s;
+    transform: translateY(0px);
+
+    &:hover{
+        transform: translateY(-10px);
+        background-color: $accentColorLight3;
+    }
 }
 
 //PARALLAX CONTAINER
@@ -450,11 +487,11 @@ body{
 }
 
 #slidingLeft{
-    animation: slideInLeft 1s 1 forwards;
+    animation: slideInLeft 1s 1 ;
 }
 
 #slidingRight{
-    animation: slideInRight 1s 1 forwards;
+    animation: slideInRight 1s 1 ;
 }
 
 @keyframes slideInLeft{

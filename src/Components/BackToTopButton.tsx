@@ -28,7 +28,11 @@ const BackToTopButton = (props: ButtonProps) => {
         //     {RiArrowUpSLine}
         // </div>
         <a onClick={props.scrollTop}>
-            <Button className={appeared ? "buttonBackToTop" : ""} id={showButton? "fadingIn" : "buttonBackToTopHidden"}>
+            <Button 
+                className={appeared ? "buttonBackToTop" : ""} 
+                id={showButton? "fadingIn" : "buttonBackToTopHidden"}
+                variant="accent"
+            >
                 <RiArrowUpSLine style={{fontSize: '25px'}}/>
             </Button>
         </a>

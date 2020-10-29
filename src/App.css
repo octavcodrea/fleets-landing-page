@@ -58,6 +58,11 @@ body {
   color: #1AB394;
 }
 
+a.colorAccent:hover {
+  color: #069478;
+  text-decoration: none;
+}
+
 .header-topbar-visible {
   position: relative;
   -webkit-transform: translateY(0);
@@ -102,7 +107,7 @@ body {
   height: 36px;
 }
 
-.header {
+.header, .header-sticky {
   z-index: 50;
   position: fixed;
   background-color: white;
@@ -110,6 +115,15 @@ body {
   top: 0px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+.header-sticky {
+  -webkit-box-shadow: 0px 0px 24px -6px rgba(82, 91, 102, 0.66);
+          box-shadow: 0px 0px 24px -6px rgba(82, 91, 102, 0.66);
+}
+
+#languageSelectMenu {
+  border: 1px solid red;
 }
 
 .navbar-container {
@@ -131,7 +145,7 @@ body {
 }
 
 .dropdown-menu {
-  border-top: 4px solid #1AB394;
+  border-radius: 0px;
   -webkit-box-shadow: 0px 0px 24px -6px rgba(82, 91, 102, 0.66);
           box-shadow: 0px 0px 24px -6px rgba(82, 91, 102, 0.66);
   opacity: 0;
@@ -169,7 +183,7 @@ body {
   opacity: 1;
 }
 
-.buttonAccent, .buttonAccentLight, .buttonAccentLightSmall, .buttonAccentLightCircle, .buttonBackToTop {
+.buttonAccent, .buttonAccentLight, .buttonAccentLightSmall, .buttonAccentLightCircle, .buttonBackToTop, .btn-accent {
   background-color: #1AB394;
   color: white;
   border: none;
@@ -178,17 +192,21 @@ body {
   transition: 0.4s;
 }
 
-.buttonAccent .dropdown-toggle:after, .buttonAccentLight .dropdown-toggle:after, .buttonAccentLightSmall .dropdown-toggle:after, .buttonAccentLightCircle .dropdown-toggle:after, .buttonBackToTop .dropdown-toggle:after {
+.buttonAccent .dropdown-toggle:after, .buttonAccentLight .dropdown-toggle:after, .buttonAccentLightSmall .dropdown-toggle:after, .buttonAccentLightCircle .dropdown-toggle:after, .buttonBackToTop .dropdown-toggle:after, .btn-accent .dropdown-toggle:after {
   content: none;
 }
 
-.buttonAccent:hover, .buttonAccentLight:hover, .buttonAccentLightSmall:hover, .buttonAccentLightCircle:hover, .buttonBackToTop:hover {
+.buttonAccent:hover, .buttonAccentLight:hover, .buttonAccentLightSmall:hover, .buttonAccentLightCircle:hover, .buttonBackToTop:hover, .btn-accent:hover {
   color: white;
   background-color: #069478;
   -webkit-transform: translateY(-6px);
           transform: translateY(-6px);
   -webkit-box-shadow: 0px 5px 15px 0px #dbdbdb;
           box-shadow: 0px 5px 15px 0px #dbdbdb;
+}
+
+.buttonAccent:active, .buttonAccentLight:active, .buttonAccentLightSmall:active, .buttonAccentLightCircle:active, .buttonBackToTop:active, .btn-accent:active {
+  background-color: #006e58;
 }
 
 .buttonAccentLight, .buttonAccentLightSmall, .buttonAccentLightCircle {
@@ -253,6 +271,23 @@ body {
 
 .cardParagraph {
   font-family: "Poppins", Helvetica, sans-serif;
+}
+
+.cardSmall {
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 24px -6px rgba(154, 164, 177, 0.66);
+          box-shadow: 0px 0px 24px -6px rgba(154, 164, 177, 0.66);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.cardSmall:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  background-color: #d4fff6;
 }
 
 .parallaxContTextbox {
@@ -414,13 +449,13 @@ body {
 }
 
 #slidingLeft {
-  -webkit-animation: slideInLeft 1s 1 forwards;
-          animation: slideInLeft 1s 1 forwards;
+  -webkit-animation: slideInLeft 1s 1;
+          animation: slideInLeft 1s 1;
 }
 
 #slidingRight {
-  -webkit-animation: slideInRight 1s 1 forwards;
-          animation: slideInRight 1s 1 forwards;
+  -webkit-animation: slideInRight 1s 1;
+          animation: slideInRight 1s 1;
 }
 
 @-webkit-keyframes slideInLeft {

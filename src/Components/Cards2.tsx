@@ -2,6 +2,10 @@ import React, { useState, useEffect} from 'react';
 import { Media } from 'react-bootstrap';
 import { FormattedMessage } from 'react-intl';
 
+import cards2a from "../Images/cards2a.svg";
+import cards2b from "../Images/cards2b.svg";
+
+
 interface CardsProps{
     yscroll: number
 }
@@ -34,7 +38,7 @@ const Cards2 = (props: CardsProps) =>{
                     height={256}
                     className="mr-3 col-12 col-lg-6"
                     style={{height: "auto"}}
-                    src="https://via.placeholder.com/512x256/73ffe2"
+                    src={cards2a}
                     alt="Generic placeholder"
                 />
             </Media>
@@ -45,7 +49,7 @@ const Cards2 = (props: CardsProps) =>{
                     height={256}
                     style={{height: "auto"}}
                     className="mr-3 col-sm-12 col-lg-6"
-                    src="https://via.placeholder.com/512x256/73ffe2"
+                    src={cards2b}
                     alt="Generic placeholder"
                 />
                 <Media.Body className="col-12 col-lg-6 mt-3">

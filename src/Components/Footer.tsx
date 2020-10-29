@@ -56,17 +56,17 @@ const Footer = (props: FooterProps) => {
         <Container>
           <Row>
             <Col className="col-12 col-lg-6 pb-5 px-4">
-              <Row className="border-bottom">
-                <div className="title-sm mt-5"></div>
+              <Row>
+                <div className="title-sm mt-5 mb-2"></div>
 
               </Row>
               <Row>
-                <h4 className="footerHeader">
+                <h4 className="footerHeader my-2">
                   {textFooterHeader1}
                 </h4>
               </Row>
               <Row>
-                <p>{textFooterHeader2}</p>
+                <p className="my-3">{textFooterHeader2}</p>
               </Row>
             </Col>
             
@@ -123,8 +123,12 @@ const Footer = (props: FooterProps) => {
               title={props.language}
               variant="light"
             >
-              <Dropdown.Item as="button" onClick={props.changeLangEn}>English</Dropdown.Item>
-              <Dropdown.Item as="button" onClick={props.changeLangRo}>Romanian</Dropdown.Item>
+              <Dropdown.Item as="button" onClick={props.changeLangEn}>
+                <i className="em em-flag-gb mx-1" aria-label="GB"></i>
+                English</Dropdown.Item>
+              <Dropdown.Item as="button" onClick={props.changeLangRo}>
+                <i className="em em-flag-ro mx-1" aria-label="RO"></i>
+                Romanian</Dropdown.Item>
             </DropdownButton>
 
 
@@ -160,8 +164,12 @@ const Footer = (props: FooterProps) => {
               title={props.language}
               variant="light"
             >
-              <Dropdown.Item as="button" onClick={props.changeLangEn}>English</Dropdown.Item>
-              <Dropdown.Item as="button" onClick={props.changeLangRo}>Romanian</Dropdown.Item>
+              <Dropdown.Item as="button" onClick={props.changeLangEn}>
+                <i className="em em-flag-gb mx-1" aria-label="GB"></i>
+                English</Dropdown.Item>
+              <Dropdown.Item as="button" onClick={props.changeLangRo}>
+                <i className="em em-flag-ro mx-1" aria-label="RO"></i>
+                Romanian</Dropdown.Item>
             </DropdownButton>
 
 

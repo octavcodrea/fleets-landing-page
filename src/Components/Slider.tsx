@@ -8,11 +8,11 @@ import { FaPlay } from 'react-icons/fa';
 import { GoPrimitiveDot } from 'react-icons/go';
 
 
-import slider1 from "../Images/slidergraphic.png";
+import slider1 from "../Images/slidergraphic.svg";
 import slider2 from "../Images/bg2.png";
 import slider3 from "../Images/bg3.png";
 
-import slider1mobile from "../Images/slidergraphic.png";
+import slider1mobile from "../Images/slidergraphic.svg";
 import slider2mobile from "../Images/bg2-mobile.png";
 import slider3mobile from "../Images/bg3-mobile.png";
 

@@ -4,6 +4,12 @@ import { Button, Media } from 'react-bootstrap';
 import { FaArrowRight } from 'react-icons/fa';
 import { FormattedMessage } from 'react-intl';
 
+import card1 from '../Images/card1.svg';
+import card2 from '../Images/card2.svg';
+import card3 from '../Images/card3.svg';
+import card4 from '../Images/card4.svg';
+
+
 interface CardsProps{
     yscroll: number
 }
@@ -31,79 +37,83 @@ const Cards1 = (props: CardsProps) =>{
 
     return(
         <div className="my-5">
-            <div className="d-flex flex-wrap container justify-content-between">
+            <div className="d-flex flex-wrap container justify-content-around">
 
-                <Media className="mx-3 my-2 col-12 col-lg-5" id={showCards? "slidingLeft" : "hidden"}>
+                <div className="cardSmall my-3 pb-3 pt-1 col-12 col-lg-5" id={showCards? "slidingLeft" : "hidden"}>
                     <img
                         width={64}
                         height={64}
-                        className="mr-3"
-                        src="https://via.placeholder.com/64x64/73ffe2"
+                        className="my-2"
+                        src={card1}
                         alt="Generic placeholder"
                     />
-                    <Media.Body>
+                    <br/>
+                    <div>
                         <h5>{textCardTitle1}</h5>
                         <p className="mb-1">
                         {textCard1}
                         </p>
                         <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
-                    </Media.Body>
-                </Media>
+                    </div>
+                </div>
 
-                <Media className="mx-3 my-2 col-12 col-lg-5" id={showCards? "slidingRight" : "hidden"}>
+                <div className="cardSmall my-3 pb-3 pt-1 col-12 col-lg-5" id={showCards? "slidingRight" : "hidden"}>
                     <img
                         width={64}
                         height={64}
-                        className="mr-3"
-                        src="https://via.placeholder.com/64x64/73ffe2"
+                        className="my-2"
+                        src={card2}
                         alt="Generic placeholder"
                     />
-                    <Media.Body>
+                    <br/>
+                    <div>
                         <h5>{textCardTitle2}</h5>
                         <p className="mb-1">
                         {textCard2}
                         </p>
                         <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
-                    </Media.Body>
-                </Media>
+                    </div>
+                </div>
 
-                <Media className="mx-3 my-2  col-sm-12 col-lg-5" id={showCards? "slidingLeft" : "hidden"}> 
+                <div className="cardSmall my-3 pb-3 pt-1 col-sm-12 col-lg-5" id={showCards? "slidingLeft" : "hidden"}> 
                     <img
                         width={64}
                         height={64}
-                        className="mr-3"
-                        src="https://via.placeholder.com/64x64/73ffe2"
+                        className="my-2"
+                        src={card3}
                         alt="Generic placeholder"
                     />
-                    <Media.Body>
+                    <br/>
+                    <div>
                         <h5>{textCardTitle3}</h5>
                         <p className="mb-1">
                         {textCard3}
                         </p>
                         <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
-                    </Media.Body>
-                </Media>
+                    </div>
+                </div>
 
-                <Media className="mx-3 my-2  col-sm-12 col-lg-5" id={showCards? "slidingRight" : "hidden"}>
+                <div className="cardSmall my-3 pb-3 pt-1 col-sm-12 col-lg-5 " id={showCards? "slidingRight" : "hidden"}>
                     <img
                         width={64}
                         height={64}
-                        className="mr-3"
-                        src="https://via.placeholder.com/64x64/73ffe2"
+                        className="my-2"
+                        src={card4}
                         alt="Generic placeholder"
                     />
-                    <Media.Body>
+                    <br/>
+                    <div>
                         <h5>{textCardTitle4}</h5>
                         <p className="mb-1">
                         {textCard4}
                         </p>
                         <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
-                    </Media.Body>
-                </Media>
+                    </div>
+                </div>
 
             </div>
             <div className="d-flex my-3 justify-content-center">
-                <Button className="px-4 py-3 buttonAccentLight">{textLetsSee}</Button>
+                <Button className="px-4 py-3 buttonAccentLight" variant="accent">{textLetsSee}</Button>
             </div>
         </div>
     )

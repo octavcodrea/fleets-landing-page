@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 // import {inlineStyles} from "./InlineStyles";
 
-import image from '../Images/parallaximage1.jpg';
+import image from '../Images/parallax-container.svg';
 
 interface StylesDictionary{
     [Key: string]: CSSProperties;
@@ -54,7 +54,7 @@ const ParallaxContainer = () =>{
             <div className="parallax-top w-100 position-absolute"></div>
             <ParallaxProvider>
                 <div className="d-block containerStyle position-relative" >
-                    <Parallax y={[0, -50]}>
+                    <Parallax y={[0, -55]}>
                         <img style={styles.imageStyle} 
                             src={image} alt=""/>
                     </Parallax>
@@ -82,8 +82,8 @@ const ParallaxContainer = () =>{
                     
                     <Col className="d-flex col-12 col-lg-4 justify-content-center align-self-center">
                         <div className="py-3">
-                            <Button className="mx-2 px-4 py-3 my-1 buttonAccent">{textPrxButtonGetStarted}</Button>
-                            <Button className="mx-2 px-4 py-3 my-1 buttonGray">{textPrxButtonGetInTouch}</Button>
+                            <Button className="mx-2 px-4 py-3 my-1 buttonAccent" variant="accent">{textPrxButtonGetStarted}</Button>
+                            <Button className="mx-2 px-4 py-3 my-1 buttonGray" variant="accent">{textPrxButtonGetInTouch}</Button>
                         </div>
                     </Col>
                 </Row>
