@@ -67,11 +67,15 @@ const SliderComponent = () =>{
                             <div className="slideContainer">
                                 <div className="slide">
                                     <div className="d-none d-lg-block slide">
-                                        <img src={slider1} alt=""  className="sliderImg" />
+                                        <div className="sliderImg">
+                                            <img src={slider1} alt="" />
+                                        </div>
                                     </div>
 
                                     <div className="d-block d-lg-none slide">
-                                        <img src={slider1mobile} alt=""  className="sliderImg" />
+                                        <div className="sliderImg">
+                                            <img src={slider1mobile} alt="" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

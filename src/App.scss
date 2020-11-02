@@ -76,6 +76,7 @@ a.colorAccent{
 //HEADER
 
 .header-topbar-visible{
+    font-size: 14px;
     position: relative;
     transform: translateY(0);
     margin-bottom: 0px;
@@ -189,6 +190,11 @@ a.colorAccent{
     color: #555555;
 }
 
+.fontPoppinsLightGray{
+    font-family: "Poppins", Helvetica, sans-serif;
+    color: #999999;
+}
+
 .headerDropdownItem{
     transition: 0.3s;
     opacity: 0;
@@ -295,9 +301,6 @@ a.colorAccent{
 }
 
 .cardSmall{
-    // border: 1px solid red;
-    // display: block;
-    // position: relative;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 24px -6px rgba(154, 164, 177, 0.66);
@@ -309,6 +312,44 @@ a.colorAccent{
         background-color: $accentColorLight3;
     }
 }
+
+.cardSmall-topleft{
+    @extend .cardSmall;
+
+    &:hover{
+        transform: translateX(-10px);
+        background-color: #ff9e9e;
+    }
+}
+
+.cardSmall-topright{
+    @extend .cardSmall;
+
+    &:hover{
+        transform: translateX(10px);
+        background-color: #fff788;
+    }
+}
+
+.cardSmall-bottomleft{
+    @extend .cardSmall;
+
+    &:hover{
+        transform: translateX(-10px);
+        background-color: #b6ff8b;
+    }
+}
+
+.cardSmall-bottomright{
+    @extend .cardSmall;
+
+    &:hover{
+        transform: translateX(10px);
+        background-color: #92fff6;
+    }
+}
+
+
 
 //PARALLAX CONTAINER
 
@@ -416,9 +457,19 @@ a.colorAccent{
     display: block;
     width: auto;
     right: 50%;
-    height: auto;
+    height: 100%;
     max-height: 100%;
     max-width: 100%;
+
+    // border: 1px solid magenta;
+    
+    img{
+        display: block;
+        height: 100%;
+        width: auto;
+        // border: 3px solid green;
+        margin: auto;
+    }
 
     // border: 1px solid green;
     // minHeight: "350px",
@@ -428,6 +479,7 @@ a.colorAccent{
         position: relative;
         margin: auto;
         right: 0px;
+        left: 0px;
     }
 }
 

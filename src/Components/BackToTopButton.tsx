@@ -15,7 +15,7 @@ const BackToTopButton = (props: ButtonProps) => {
     
     
     useEffect(() => {
-        if(props.yscroll > 250){
+        if(props.yscroll > 150){
             setShowButton(true);
             setAppeared(true);
         }else{

@@ -39,7 +39,7 @@ const Cards1 = (props: CardsProps) =>{
         <div className="my-5">
             <div className="d-flex flex-wrap container justify-content-around">
 
-                <div className="cardSmall my-3 pb-3 pt-1 col-12 col-lg-5" id={showCards? "slidingLeft" : "hidden"}>
+                <div className="cardSmall-topleft my-3 pb-3 pt-1 col-12 col-lg-5" id={showCards? "slidingLeft" : "hidden"}>
                     <img
                         width={64}
                         height={64}
@@ -57,7 +57,7 @@ const Cards1 = (props: CardsProps) =>{
                     </div>
                 </div>
 
-                <div className="cardSmall my-3 pb-3 pt-1 col-12 col-lg-5" id={showCards? "slidingRight" : "hidden"}>
+                <div className="cardSmall-topright my-3 pb-3 pt-1 col-12 col-lg-5" id={showCards? "slidingRight" : "hidden"}>
                     <img
                         width={64}
                         height={64}
@@ -75,7 +75,7 @@ const Cards1 = (props: CardsProps) =>{
                     </div>
                 </div>
 
-                <div className="cardSmall my-3 pb-3 pt-1 col-sm-12 col-lg-5" id={showCards? "slidingLeft" : "hidden"}> 
+                <div className="cardSmall-bottomleft my-3 pb-3 pt-1 col-sm-12 col-lg-5" id={showCards? "slidingLeft" : "hidden"}> 
                     <img
                         width={64}
                         height={64}
@@ -93,7 +93,7 @@ const Cards1 = (props: CardsProps) =>{
                     </div>
                 </div>
 
-                <div className="cardSmall my-3 pb-3 pt-1 col-sm-12 col-lg-5 " id={showCards? "slidingRight" : "hidden"}>
+                <div className="cardSmall-bottomright my-3 pb-3 pt-1 col-sm-12 col-lg-5 " id={showCards? "slidingRight" : "hidden"}>
                     <img
                         width={64}
                         height={64}

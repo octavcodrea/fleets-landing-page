@@ -4,7 +4,8 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import { MdHeadsetMic, MdPerson, MdKeyboardArrowDown } from "react-icons/md";
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { GrFacebookOption } from "react-icons/gr"
 import { GiHamburgerMenu } from "react-icons/gi";
 
 import { Col, Container, Row } from "react-bootstrap";
@@ -107,7 +108,7 @@ const Header = (props: HeaderProps) => {
   const [isOpen, setIsOpen] = useState([false, false]);
   const [isLanguageMenuOpen, setisLanguageMenuOpen] = useState(false);
 
-  const scrollThreshold = 200;
+  const scrollThreshold = 80;
   
   const handleOpen = (index: number) => {
     setIsOpen((prevState) =>
@@ -157,16 +158,16 @@ const Header = (props: HeaderProps) => {
           </DropdownButton>
 
 
-          <div className="mx-2 my-1">
-            <div className="mx-2 d-inline-block fontPoppinsGray">
+          <div className="mx-2 my-2">
+            <div className="mx-2 d-inline-block fontPoppinsLightGray align-middle">
               <MdHeadsetMic />
               <FormattedMessage id="phone" defaultMessage="+40 0000 0000" />
             </div>
             |
-            <div className="mx-2 d-inline-block">
-              <FaFacebookF />
+            <div className="mx-2 d-inline-block text-secondary">
+              <GrFacebookOption />
             </div>
-            <div className="mx-2 d-inline-block">
+            <div className="mx-2 d-inline-block text-secondary">
               <FaLinkedinIn />
             </div>
             {/* <div className="mx-2 d-inline-block">

@@ -64,6 +64,7 @@ a.colorAccent:hover {
 }
 
 .header-topbar-visible {
+  font-size: 14px;
   position: relative;
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -173,6 +174,11 @@ a.colorAccent:hover {
   color: #555555;
 }
 
+.fontPoppinsLightGray {
+  font-family: "Poppins", Helvetica, sans-serif;
+  color: #999999;
+}
+
 .headerDropdownItem {
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -273,7 +279,7 @@ a.colorAccent:hover {
   font-family: "Poppins", Helvetica, sans-serif;
 }
 
-.cardSmall {
+.cardSmall, .cardSmall-topleft, .cardSmall-topright, .cardSmall-bottomleft, .cardSmall-bottomright {
   background-color: white;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 24px -6px rgba(154, 164, 177, 0.66);
@@ -284,10 +290,34 @@ a.colorAccent:hover {
           transform: translateY(0px);
 }
 
-.cardSmall:hover {
+.cardSmall:hover, .cardSmall-topleft:hover, .cardSmall-topright:hover, .cardSmall-bottomleft:hover, .cardSmall-bottomright:hover {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
   background-color: #d4fff6;
+}
+
+.cardSmall-topleft:hover {
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+  background-color: #ff9e9e;
+}
+
+.cardSmall-topright:hover {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  background-color: #fff788;
+}
+
+.cardSmall-bottomleft:hover {
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+  background-color: #b6ff8b;
+}
+
+.cardSmall-bottomright:hover {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  background-color: #92fff6;
 }
 
 .parallaxContTextbox {
@@ -382,9 +412,16 @@ a.colorAccent:hover {
   display: block;
   width: auto;
   right: 50%;
-  height: auto;
+  height: 100%;
   max-height: 100%;
   max-width: 100%;
+}
+
+.sliderImg img {
+  display: block;
+  height: 100%;
+  width: auto;
+  margin: auto;
 }
 
 @media (max-width: 992px) {
@@ -392,6 +429,7 @@ a.colorAccent:hover {
     position: relative;
     margin: auto;
     right: 0px;
+    left: 0px;
   }
 }
 
