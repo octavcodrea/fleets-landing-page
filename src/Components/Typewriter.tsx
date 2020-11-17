@@ -1,6 +1,6 @@
 import React from 'react';
 import Typed from 'typed.js';
-import {inlineStyles} from './InlineStyles';
+// import {inlineStyles} from './InlineStyles';
 
 interface TypewriterProps{
     strings: string[]
@@ -56,6 +56,20 @@ class Typewriter extends React.Component<TypewriterProps, TypewriterState> {
       this.typed = new Typed(this.el, options);
       window.addEventListener('resize', this.updateWindowDimensions);
       this.checkAspectRatio();
+    }
+
+    componentDidUpdate(){
+      this.typed.destroy();
+      const  strings  = this.props.strings;
+      const options = {
+        strings: strings,
+      typeSpeed: 50,
+      backSpeed: 50,
+      backDelay: 2000,
+      loop: true
+    };
+    // this.el refers to the <span> in the render() method
+    this.typed = new Typed(this.el, options);
     }
   
     componentWillUnmount() {

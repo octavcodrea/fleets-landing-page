@@ -23,14 +23,16 @@
     "navbar-dropdownitem7": "",
     "navbar-dropdownitem8": "",
 
-    "slider-typewriter1": "",
-    "slider-typewriter2": "",
-    "slider-typewriter3": "",
-    "slider-moreaboutus": "",
-    "slider-watchvideo": "",
+    "slider-typewriter1a": "This is the text for the Typewriter 1A component.",
+    "slider-typewriter1b": "This is the text for the Typewriter 1B component.",
+    "slider-typewriter2a": "This is the text for the Typewriter 2A component.",
+    "slider-typewriter2b": "This is the text for the Typewriter 2B component.",
+    "slider-typewriter3": "This is the text for the Typewriter 3 component.",
+    "slider-moreaboutus": "More about us",
+    "slider-watchvideo": "Watch video",
 
-    "slider-header1": "",
-    "slider-header2":"",
+    "slider-header1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, odit?",
+    "slider-header2":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, itaque.",
 
     "card-1-1-title": "Get Started Immediatly",
     "card-1-1-text1": "This is some text for the first card.",

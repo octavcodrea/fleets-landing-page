@@ -1,7 +1,7 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useLayoutEffect } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import { FormattedMessage } from 'react-intl';
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
+import { ParallaxProvider, Parallax, useController } from 'react-scroll-parallax';
 // import {inlineStyles} from "./InlineStyles";
 
 import image from '../Images/parallax-container.svg';
@@ -9,6 +9,18 @@ import image from '../Images/parallax-container.svg';
 interface StylesDictionary{
     [Key: string]: CSSProperties;
 }
+
+const ParallaxCache = () => {
+    const { parallaxController } = useController();
+ 
+    useLayoutEffect(() => {
+        const handler = () => parallaxController.update();
+        window.addEventListener('load', handler);
+        return () => window.removeEventListener('load', handler);
+    }, [parallaxController]);
+ 
+    return null;
+};
 
 const ParallaxContainer = () =>{
 
@@ -44,15 +56,18 @@ const ParallaxContainer = () =>{
         <div className="container-fluid mx-0 px-0 position-relative">
 
             <div className="container w-100 position-relative" >
-                <div className="position-absolute parallaxContTextbox">
+                <div className="position-absolute parallaxContTextbox mx-auto">
                     <h1 className="parallaxContHeader">{textPrxHeader1}</h1>
                     <p className="parallaxContHeader2">{textPrxHeader2}</p>
-                    <button className="parallaxContButton">{textPrxButton}</button>
+                    <div className="parallaxContTextboxButtonContainer">
+                        <button className="parallaxContButton">{textPrxButton}</button>
+                    </div>
                 </div>
             </div>
 
             <div className="parallax-top w-100 position-absolute"></div>
             <ParallaxProvider>
+                <ParallaxCache /> 
                 <div className="d-block containerStyle position-relative" >
                     <Parallax y={[0, -55]}>
                         <img style={styles.imageStyle} 
@@ -81,7 +96,7 @@ const ParallaxContainer = () =>{
                     </Col>
                     
                     <Col className="d-flex col-12 col-lg-4 justify-content-center align-self-center">
-                        <div className="py-3">
+                        <div className="d-flex py-3 justify-content-center mx-auto">
                             <Button className="mx-2 px-4 py-3 my-1 buttonAccent" variant="accent">{textPrxButtonGetStarted}</Button>
                             <Button className="mx-2 px-4 py-3 my-1 buttonGray" variant="accent">{textPrxButtonGetInTouch}</Button>
                         </div>

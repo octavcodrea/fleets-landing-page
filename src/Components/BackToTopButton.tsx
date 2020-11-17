@@ -33,7 +33,7 @@ const BackToTopButton = (props: ButtonProps) => {
                 id={showButton? "fadingIn" : "buttonBackToTopHidden"}
                 variant="accent"
             >
-                <RiArrowUpSLine style={{fontSize: '25px'}}/>
+                <RiArrowUpSLine style={{fontSize: '20px'}}/>
             </Button>
         </a>
     )

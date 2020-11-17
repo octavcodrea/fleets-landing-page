@@ -113,7 +113,7 @@ class Main extends React.Component<MainProps, MainState>{
                         changeLangEn={() => this.changeLanguage("English")}
                     />
 
-                    <SliderComponent />
+                    <SliderComponent local={this.state.local} />
                     <Cards1 yscroll={this.state.Yscroll}/>
                     <Cards2 yscroll={this.state.Yscroll}/>
                     <ParallaxContainer />

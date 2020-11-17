@@ -19,14 +19,16 @@
     "navbar-dropdownitem7": "",
     "navbar-dropdownitem8": "",
 
-    "slider-typewriter1": "",
-    "slider-typewriter2": "",
-    "slider-typewriter3": "",
-    "slider-moreaboutus": "",
-    "slider-watchvideo": "",
+    "slider-typewriter1a": "RO-This is the text for the Typewriter 1A component.",
+    "slider-typewriter1b": "RO-This is the text for the Typewriter 1B component.",
+    "slider-typewriter2a": "RO-This is the text for the Typewriter 2A component.",
+    "slider-typewriter2b": "RO-This is the text for the Typewriter 2B component.",
+    "slider-typewriter3": "RO-This is the text for the Typewriter 3 component.",
+    "slider-moreaboutus": "Mai multe",
+    "slider-watchvideo": "Urmărește clipul",
 
-    "slider-header1": "",
-    "slider-header2":"",
+    "slider-header1": "RO-Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, odit?",
+    "slider-header2": "RO-Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, itaque.",
 
     "card-1-1-title": "RO-Get Started Immediatly",
     "card-1-1-text1": "RO-This is some text for the first card.",
@@ -80,8 +82,8 @@
     "footer-col3-5": "View more...",
 
     "footer-link1": "fleets",
-    "footer-link2": "Link1",
-    "footer-link3": "Link2",
-    "footer-link4": "Link3",
-    "footer-link5": "Link4"
+    "footer-link2": "RO-Link1",
+    "footer-link3": "RO-Link2",
+    "footer-link4": "RO-Link3",
+    "footer-link5": "RO-Link4"
 }

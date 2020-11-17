@@ -53,7 +53,7 @@ const Cards1 = (props: CardsProps) =>{
                         <p className="mb-1">
                         {textCard1}
                         </p>
-                        <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
+                        <a href="#navbar" className="my-0 py-0 colorAccent explore-container">{textExploreNow} <FaArrowRight className="mb-1  explore-arrow" /> </a>
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@ const Cards1 = (props: CardsProps) =>{
                         <p className="mb-1">
                         {textCard2}
                         </p>
-                        <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
+                        <a href="#navbar" className="my-0 py-0 colorAccent explore-container">{textExploreNow} <FaArrowRight className="mb-1 explore-arrow" /> </a>
                     </div>
                 </div>
 
@@ -89,7 +89,7 @@ const Cards1 = (props: CardsProps) =>{
                         <p className="mb-1">
                         {textCard3}
                         </p>
-                        <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
+                        <a href="#navbar" className="my-0 py-0 colorAccent explore-container">{textExploreNow} <FaArrowRight className="mb-1  explore-arrow" /> </a>
                     </div>
                 </div>
 
@@ -107,7 +107,7 @@ const Cards1 = (props: CardsProps) =>{
                         <p className="mb-1">
                         {textCard4}
                         </p>
-                        <a href="#navbar" className="my-0 py-0 colorAccent">{textExploreNow}<FaArrowRight className="mb-1" /> </a>
+                        <a href="#navbar" className="my-0 py-0 colorAccent explore-container">{textExploreNow} <FaArrowRight className="mb-1  explore-arrow" /> </a>
                     </div>
                 </div>
 

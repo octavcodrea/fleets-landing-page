@@ -108,7 +108,7 @@ const Header = (props: HeaderProps) => {
   const [isOpen, setIsOpen] = useState([false, false]);
   const [isLanguageMenuOpen, setisLanguageMenuOpen] = useState(false);
 
-  const scrollThreshold = 80;
+  const scrollThreshold = 60;
   
   const handleOpen = (index: number) => {
     setIsOpen((prevState) =>
