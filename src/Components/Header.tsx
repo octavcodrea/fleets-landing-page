@@ -5,19 +5,17 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import { MdHeadsetMic, MdPerson, MdKeyboardArrowDown } from "react-icons/md";
 import { FaLinkedinIn } from "react-icons/fa";
-import { GrFacebookOption } from "react-icons/gr"
+import { GrFacebookOption } from "react-icons/gr";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 import { Col, Container, Row } from "react-bootstrap";
-// import { accentColor } from "./InlineStyles";
-// import {inlineStyles} from "./InlineStyles";
 
 interface HeaderProps {
-  language: string,
-  yscroll: number,
-  changeLangRo: any,
-  changeLangEn: any,
-  languageFlag: string
+  language: string;
+  yscroll: number;
+  changeLangRo: any;
+  changeLangEn: any;
+  languageFlag: string;
 }
 
 interface StateTypes {
@@ -26,57 +24,68 @@ interface StateTypes {
 
 const Header = (props: HeaderProps) => {
   let textLanguage = (
-  <div style={{display: "inline-block"}}>
-    <i className="em em-flag-gb mx-1" aria-label="GB"></i> English
-  </div>);
+    <div style={{ display: "inline-block" }}>
+      <i className="em em-flag-gb mx-1" aria-label="GB"></i> English
+    </div>
+  );
 
-  switch(props.language){
-    default:{ textLanguage = (
-      <div style={{display: "inline-block"}}>
+  switch (props.language) {
+    default: {
+      textLanguage = (
+        <div style={{ display: "inline-block" }}>
           <i className="em em-flag-gb mx-1" aria-label="GB"></i> English
-      </div>
-    ); break; }
+        </div>
+      );
+      break;
+    }
     case "English": {
       textLanguage = (
-        <div style={{display: "inline-block"}}>
+        <div style={{ display: "inline-block" }}>
           <i className="em em-flag-gb mx-1" aria-label="GB"></i> English
         </div>
-      ); break;
-    } 
+      );
+      break;
+    }
     case "Romanian": {
       textLanguage = (
-        <div style={{display: "inline-block"}}>
+        <div style={{ display: "inline-block" }}>
           <i className="em em-flag-ro mx-1" aria-label="RO"></i> Română
         </div>
-      ); break;
+      );
+      break;
     }
     case "Română": {
       textLanguage = (
-        <div style={{display: "inline-block"}}>
+        <div style={{ display: "inline-block" }}>
           <i className="em em-flag-ro mx-1" aria-label="RO"></i> Română
         </div>
-      ); break;
-    } 
-    
+      );
+      break;
+    }
+
     case "Spanish": {
       textLanguage = (
-        <div style={{display: "inline-block"}}>
+        <div style={{ display: "inline-block" }}>
           <i className="em em-flag-gb mx-1" aria-label="GB"></i> Spanish
         </div>
-      ); break;
-    } 
+      );
+      break;
+    }
   }
+
+    //DECLARING VARIABLES FOR REACT-INTL TEXT
+    //these variables are used for the text content in the page
 
   let textFeatures = (
     <div>
       <FormattedMessage id="navbar-link-features" defaultMessage="Features" />
-      <MdKeyboardArrowDown className="mx-1"/>
+      <MdKeyboardArrowDown className="mx-1" />
     </div>
   );
   let textSolutions = (
     <div>
       <FormattedMessage id="navbar-link-solutions" defaultMessage="Solutions" />
-      <MdKeyboardArrowDown className="mx-1"/>
+      <MdKeyboardArrowDown className="mx-1" />
     </div>
   );
   let textPricing = (
@@ -96,20 +105,36 @@ const Header = (props: HeaderProps) => {
     <FormattedMessage id="navbar-button-account" defaultMessage="Account" />
   );
 
-  let textDropdown1 = (<FormattedMessage id="navbar-dropdownitem1" defaultMessage="Feature1" />);
-  let textDropdown2 = (<FormattedMessage id="navbar-dropdownitem2" defaultMessage="Feature2" />);
-  let textDropdown3 = (<FormattedMessage id="navbar-dropdownitem3" defaultMessage="Feature3" />);
-  let textDropdown4 = (<FormattedMessage id="navbar-dropdownitem4" defaultMessage="Feature4" />);
-  let textDropdown5 = (<FormattedMessage id="navbar-dropdownitem5" defaultMessage="Feature5" />);
-  let textDropdown6 = (<FormattedMessage id="navbar-dropdownitem6" defaultMessage="Feature6" />);
-  let textDropdown7 = (<FormattedMessage id="navbar-dropdownitem7" defaultMessage="Feature7" />);
-  let textDropdown8 = (<FormattedMessage id="navbar-dropdownitem8" defaultMessage="Feature8" />);
+  let textDropdown1 = (
+    <FormattedMessage id="navbar-dropdownitem1" defaultMessage="Feature1" />
+  );
+  let textDropdown2 = (
+    <FormattedMessage id="navbar-dropdownitem2" defaultMessage="Feature2" />
+  );
+  let textDropdown3 = (
+    <FormattedMessage id="navbar-dropdownitem3" defaultMessage="Feature3" />
+  );
+  let textDropdown4 = (
+    <FormattedMessage id="navbar-dropdownitem4" defaultMessage="Feature4" />
+  );
+  let textDropdown5 = (
+    <FormattedMessage id="navbar-dropdownitem5" defaultMessage="Feature5" />
+  );
+  let textDropdown6 = (
+    <FormattedMessage id="navbar-dropdownitem6" defaultMessage="Feature6" />
+  );
+  let textDropdown7 = (
+    <FormattedMessage id="navbar-dropdownitem7" defaultMessage="Feature7" />
+  );
+  let textDropdown8 = (
+    <FormattedMessage id="navbar-dropdownitem8" defaultMessage="Feature8" />
+  );
 
   const [isOpen, setIsOpen] = useState([false, false]);
   const [isLanguageMenuOpen, setisLanguageMenuOpen] = useState(false);
 
   const scrollThreshold = 60;
-  
+
   const handleOpen = (index: number) => {
     setIsOpen((prevState) =>
       prevState.map((item, idx) => (idx === index ? !item : item))
@@ -122,19 +147,21 @@ const Header = (props: HeaderProps) => {
     );
   };
 
-  useEffect(
-    () => {
-      if(props.yscroll >= scrollThreshold){
-        setisLanguageMenuOpen(false);
-      }
-    },
-    [isLanguageMenuOpen, props.yscroll]
-  );
+  useEffect(() => {
+    if (props.yscroll >= scrollThreshold) {
+      setisLanguageMenuOpen(false);
+    }
+  }, [isLanguageMenuOpen, props.yscroll]);
 
   const formatTopBar = () => {
-
     return (
-      <Container className={props.yscroll < scrollThreshold ? "header-topbar-visible" : "header-topbar-hidden"}>
+      <Container
+        className={
+          props.yscroll < scrollThreshold
+            ? "header-topbar-visible"
+            : "header-topbar-hidden"
+        }
+      >
         <Row>
           <Col></Col>
           <DropdownButton
@@ -144,19 +171,16 @@ const Header = (props: HeaderProps) => {
             onClick={() => setisLanguageMenuOpen(!isLanguageMenuOpen)}
             show={isLanguageMenuOpen}
           >
+            <Dropdown.Item as="button" onClick={props.changeLangEn}>
+              <i className="em em-flag-gb mx-1" aria-label="GB"></i>
+              English
+            </Dropdown.Item>
 
-              <Dropdown.Item as="button" onClick={props.changeLangEn}>
-                  <i className="em em-flag-gb mx-1" aria-label="GB"></i>
-                  English
-              </Dropdown.Item>
-
-              <Dropdown.Item as="button" onClick={props.changeLangRo}>
-                  <i className="em em-flag-ro mx-1" aria-label="RO"></i>
-                  Romanian
-              </Dropdown.Item>
-
+            <Dropdown.Item as="button" onClick={props.changeLangRo}>
+              <i className="em em-flag-ro mx-1" aria-label="RO"></i>
+              Romanian
+            </Dropdown.Item>
           </DropdownButton>
-
 
           <div className="mx-2 my-2">
             <div className="mx-2 d-inline-block fontPoppinsLightGray align-middle">
@@ -170,9 +194,6 @@ const Header = (props: HeaderProps) => {
             <div className="mx-2 d-inline-block text-secondary">
               <FaLinkedinIn />
             </div>
-            {/* <div className="mx-2 d-inline-block">
-              <FaSearch />
-            </div> */}
           </div>
         </Row>
       </Container>
@@ -180,16 +201,19 @@ const Header = (props: HeaderProps) => {
   };
 
   const formatNavbarContainer = () => {
-    return(
+    return (
       <div className="navbar-container">
-        <div className={props.yscroll < scrollThreshold ? "header" : "header-sticky"}> 
-        {/* <div className="header"> */}
+        <div
+          className={
+            props.yscroll < scrollThreshold ? "header" : "header-sticky"
+          }
+        >
           {formatTopBar()}
           {formatNavbar()}
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const formatNavbar = () => {
     return (
@@ -198,8 +222,13 @@ const Header = (props: HeaderProps) => {
         <div className="navbar w-100 d-none d-lg-flex px-0 justify-content-between">
           <div className="navbar d-none d-lg-flex my-1 px-0">
             <div className="align-self-first">
-                <div className={props.yscroll < scrollThreshold ? "align-self-center my-0 title-md" : "align-self-center my-0 title-sm"}></div>
-              {/* <h1 className="title">fleets</h1> */}
+              <div
+                className={
+                  props.yscroll < scrollThreshold
+                    ? "align-self-center my-0 title-md"
+                    : "align-self-center my-0 title-sm"
+                }
+              ></div>
             </div>
             <div>
               <ul className="d-block my-2">
@@ -211,7 +240,6 @@ const Header = (props: HeaderProps) => {
                     onMouseEnter={() => handleOpen(0)}
                     onMouseLeave={() => handleClose(0)}
                     show={isOpen[0]}
-                    
                   >
                     <Dropdown.Item as="button">{textDropdown1}</Dropdown.Item>
                     <Dropdown.Item as="button">{textDropdown2}</Dropdown.Item>
@@ -268,7 +296,10 @@ const Header = (props: HeaderProps) => {
             </div>
           </div>
 
-          <Button className="d-inline-block my-3 pr-3 buttonAccent" variant="accent">
+          <Button
+            className="d-inline-block my-3 pr-3 buttonAccent"
+            variant="accent"
+          >
             <div className="d-inline-block mx-1 my-1">
               <MdPerson />
             </div>
@@ -279,29 +310,28 @@ const Header = (props: HeaderProps) => {
         {/* MOBILE */}
         <div className="d-flex my-3 px-2 d-lg-none justify-content-between">
           <div>
-            {/* <h1 className="align-self-center my-0 title">fleets</h1> */}
             <div className="align-self-center my-0 title-sm"></div>
           </div>
 
-            <div className="d-flex">
+          <div className="d-flex">
             <Button className="d-block buttonAccent mx-2" variant="accent">
-                <div className="d-inline-block mx-1 my-1">
+              <div className="d-inline-block mx-1 my-1">
                 <MdPerson />
-                </div>
-                {textAccount}
+              </div>
+              {textAccount}
             </Button>
-    
+
             <div className="d-block align-self-center buttonAccent mx-2 p-1">
-                <DropdownButton
+              <DropdownButton
                 variant="link text-dark"
-                title={<GiHamburgerMenu color="white"/>}
-                >
+                title={<GiHamburgerMenu color="white" />}
+              >
                 <Dropdown.Item as="button">{textFeatures}</Dropdown.Item>
                 <Dropdown.Item as="button">{textSolutions}</Dropdown.Item>
                 <Dropdown.Item as="button">{textPricing}</Dropdown.Item>
                 <Dropdown.Item as="button">{textHowItWorks}</Dropdown.Item>
                 <Dropdown.Item as="button">{textContactUs}</Dropdown.Item>
-                </DropdownButton>
+              </DropdownButton>
             </div>
           </div>
         </div>
@@ -309,12 +339,7 @@ const Header = (props: HeaderProps) => {
     );
   };
 
-  return (
-    <header>
-
-      {formatNavbarContainer()}
-    </header>
-  );
+  return <header>{formatNavbarContainer()}</header>;
 };
 
 export default Header;

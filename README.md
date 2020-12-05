@@ -1,44 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[RO / EN]
 
-## Available Scripts
+[RO]
+Proiectul e construit cu react-boostrap pentru layout.
 
-In the project directory, you can run:
+Alinierea elementelor in pagina e facuta in bootstrap in componentele de React. (in numele claselor)
 
-### `npm start`
+Componentele sunt:
+- Header pentru bara de sus si navbar
+    - Headerul schimba ce clasa de navbar randeaza in functie de scroll
+- Slider pentru perechea de imagine si text. Efectul de text care apare litera cu litera este din componentul Typewriter randat in Slider
+- Typewriter, component creat cu pachetul typed.js
+- Cards1, primul set de carduri, cu stiluri de animatie si hover in App.scss
+- Cards2, al doilea set de carduri, cu stiluri de animatie si hover in App.scss
+- ParallaxContainer, sectiunea cu imaginea cu efect parallax cand se da scroll pe pagina
+    - Efectul de parallax este controlat de pachetul react-scroll-parallax
+- Footer, pentru footer.
+- BackToTopButton, butonul care apare in dreapta jos dupa ce userul da scroll pe pagina
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Componentele sunt create individual, si apoi sunt puse impreuna in Main.tsx .
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Pentru efectele care tin de scrollul paginii, acestea depind de un prop din Main.tsx care inregistreaza scrollul.
 
-### `npm test`
+Stilurile sunt aplicate din App.scss . Efectele pentru hover si click sunt continute si ele in App.scss.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Pentru content, textul e luat dintr-o serie de .json-uri care contin stringurile in functie de limba selectata.
+Alegerea stringurilor din .json-uri e facuta cu pachetul react-intl . Tot textul ce va aparea pe pagina va fi extras din acele stringuri.
 
-### `npm run build`
+Iconurile sunt luate din pachetul react-icons. Fiecare icon folosit este importat ca si component din react-icons.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[EN]
+This project is built with react-bootstrap for layout.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Element alignment is done with Bootstrap in the React components. (in class names)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The components are:
+- Header for the top bar and the navbar
+    - The header switches between what navbar class it renders depending on page scroll
+- Slider for the main image and text pair. The typewriter effect is rendered by the Typewriter component.
+- Typewriter, created using the typed.js package
+- Cards1, the first set of cards. Styles used are contained in App.scss
+- Cards2, the second set of cards. Styles used are contained in App.scss
+- ParallaxContainer, the image section with a parallax effect when scrolling the page
+    - The parallax effect is controlled by using the react-scroll-parallax package
+- Footer
+- BackToTopButton
 
-### `npm run eject`
+Components are created individually and are assembled into the page in Main.tsx .
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For effects pertaining to page scrolling, these depend on a prop from Main.tsx which listens for page scrolling.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Styles are applied from App.scss . Hover and active events are contained as well in App.scss.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+For content, the text is extracted from a series of .jsons that contain strings depending on the selected language.
+Choosing the strings from the .jsons is done with the react-intl package. All the text displayed on the page is taken from those strings.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The icons used are taken from the react-icons package. Each icon is imported as a component from react-icons.
