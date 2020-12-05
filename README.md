@@ -1,6 +1,6 @@
-[RO / EN]
+**[RO / EN]**
 
-[RO]
+**[RO]**
 Proiectul e construit cu react-boostrap pentru layout.
 
 Alinierea elementelor in pagina e facuta in bootstrap in componentele de React. (in numele claselor)
@@ -28,7 +28,7 @@ Alegerea stringurilor din .json-uri e facuta cu pachetul react-intl . Tot textul
 
 Iconurile sunt luate din pachetul react-icons. Fiecare icon folosit este importat ca si component din react-icons.
 
-[EN]
+**[EN]**
 This project is built with react-bootstrap for layout.
 
 Element alignment is done with Bootstrap in the React components. (in class names)
